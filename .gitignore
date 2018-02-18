@@ -14,3 +14,6 @@ yarn.lock
 
 # npmrc
 .npmrc
+
+# log files
+*.log

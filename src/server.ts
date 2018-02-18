@@ -1,19 +1,10 @@
 /** yggdrasil imports */
-import {
-	FileLogger,
-	Bootstrap
-} from '@yggdrasilts/core';
-import {
-	IBootstrapRoute
-} from '@yggdrasilts/core/modules/startup';
-import {
-	Router
-} from '@yggdrasilts/mvc';
+import { FileLogger, Bootstrap } from '@yggdrasilts/core';
+import { IBootstrapRoute } from '@yggdrasilts/core/modules/startup';
+import { Router } from '@yggdrasilts/mvc';
 
 /** Application imports */
-import {
-	HomeRoute
-} from './routes/home.route';
+import { HomeRoute } from './routes/home.route';
 
 /**
  * @class YggdrasilServer
