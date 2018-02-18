@@ -1,0 +1,16 @@
+# Folders
+node_modules
+dist
+logs
+.nyc_output
+coverage
+
+# Templates
+templates/yummy-colorlib
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# npmrc
+.npmrc
