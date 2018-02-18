@@ -1,0 +1,37 @@
+//-- ****** Top Header Area Start ******
+.top_header_area
+	.container
+		.row
+			.col-5.col-sm-6
+				//-- Top Social bar start
+				.top_social_bar
+					a(href='#')
+						i.fa.fa-facebook(aria-hidden='true')
+					a(href='#')
+						i.fa.fa-twitter(aria-hidden='true')
+					a(href='#')
+						i.fa.fa-linkedin(aria-hidden='true')
+					a(href='#')
+						i.fa.fa-skype(aria-hidden='true')
+					a(href='#')
+						i.fa.fa-dribbble(aria-hidden='true')
+			//-- Login Register Area
+			.col-7.col-sm-6
+				.signup-search-area.d-flex.align-items-center.justify-content-end
+					.login_register_area.d-flex
+						.login
+							a(href='register.html') Sing in
+						.register
+							a(href='register.html') Sing up
+					//-- Search Button Area
+					.search_button
+						a.searchBtn(href='#')
+							i.fa.fa-search(aria-hidden='true')
+					//-- Search Form
+					.search-hidden-form
+						form(action='#' method='get')
+							input#search-anything(type='search' name='search' placeholder='Search Anything...')
+							input.d-none(type='submit' value='')
+							span.searchBtn
+								i.fa.fa-times(aria-hidden='true')
+//-- ****** Top Header Area End ******

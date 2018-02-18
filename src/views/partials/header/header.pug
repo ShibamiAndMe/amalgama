@@ -1,0 +1,41 @@
+include header.top.pug
+//-- ****** Header Area Start ******
+header.header_area
+	.container
+		.row
+			//-- Logo Area Start
+			.col-12
+				.logo_area.text-center
+					a.yummy-logo(href='index.html') Yummy Blog
+		.row
+			.col-12
+				nav.navbar.navbar-expand-lg
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#yummyfood-nav' aria-controls='yummyfood-nav' aria-expanded='false' aria-label='Toggle navigation')
+						i.fa.fa-bars(aria-hidden='true')
+						|  Menu
+					//-- Menu Area Start
+					#yummyfood-nav.collapse.navbar-collapse.justify-content-center
+						ul#yummy-nav.navbar-nav
+							li.nav-item.active
+								a.nav-link(href='index.html')
+									| Home
+									span.sr-only (current)
+							li.nav-item.dropdown
+								a#yummyDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Pages
+								.dropdown-menu(aria-labelledby='yummyDropdown')
+									a.dropdown-item(href='index.html') Home
+									a.dropdown-item(href='archive.html') Archive
+									a.dropdown-item(href='single.html') Single Blog
+									a.dropdown-item(href='static.html') Static Page
+									a.dropdown-item(href='contact.html') Contact
+							li.nav-item
+								a.nav-link(href='#') Features
+							li.nav-item
+								a.nav-link(href='#') Categories
+							li.nav-item
+								a.nav-link(href='archive.html') Archive
+							li.nav-item
+								a.nav-link(href='#') About
+							li.nav-item
+								a.nav-link(href='contact.html') Contact
+//-- ****** Header Area End ******

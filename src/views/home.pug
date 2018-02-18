@@ -1,99 +1,601 @@
-extends layout
+extends layout/layout
 
 block content
-	.jumbotron
+	//-- ****** Welcome Post Area Start ******
+	section.welcome-post-sliders.owl-carousel
+		//-- Single Slide
+		.welcome-single-slide
+			//-- Post Thumb
+			img(src='/img/bg-img/slide-1.jpg' alt='')
+			//-- Overlay Text
+			.project_title
+				.post-date-commnents.d-flex
+					a(href='#') May 19, 2017
+					a(href='#') 5 Comment
+				a(href='#')
+					h5 &ldquo;I&rsquo;ve Come and I&rsquo;m Gone&rdquo;: A Tribute to Istanbul&rsquo;s Street
+		//-- Single Slide
+		.welcome-single-slide
+			//-- Post Thumb
+			img(src='/img/bg-img/slide-2.jpg' alt='')
+			//-- Overlay Text
+			.project_title
+				.post-date-commnents.d-flex
+					a(href='#') May 19, 2017
+					a(href='#') 5 Comment
+				a(href='#')
+					h5 &ldquo;I&rsquo;ve Come and I&rsquo;m Gone&rdquo;: A Tribute to Istanbul&rsquo;s Street
+		//-- Single Slide
+		.welcome-single-slide
+			//-- Post Thumb
+			img(src='/img/bg-img/slide-3.jpg' alt='')
+			//-- Overlay Text
+			.project_title
+				.post-date-commnents.d-flex
+					a(href='#') May 19, 2017
+					a(href='#') 5 Comment
+				a(href='#')
+					h5 &ldquo;I&rsquo;ve Come and I&rsquo;m Gone&rdquo;: A Tribute to Istanbul&rsquo;s Street
+		//-- Single Slide
+		.welcome-single-slide
+			//-- Post Thumb
+			img(src='/img/bg-img/slide-4.jpg' alt='')
+			//-- Overlay Text
+			.project_title
+				.post-date-commnents.d-flex
+					a(href='#') May 19, 2017
+					a(href='#') 5 Comment
+				a(href='#')
+					h5 &ldquo;I&rsquo;ve Come and I&rsquo;m Gone&rdquo;: A Tribute to Istanbul&rsquo;s Street
+		//-- Single Slide
+		.welcome-single-slide
+			//-- Post Thumb
+			img(src='/img/bg-img/slide-4.jpg' alt='')
+			//-- Overlay Text
+			.project_title
+				.post-date-commnents.d-flex
+					a(href='#') May 19, 2017
+					a(href='#') 5 Comment
+				a(href='#')
+					h5 &ldquo;I&rsquo;ve Come and I&rsquo;m Gone&rdquo;: A Tribute to Istanbul&rsquo;s Street
+	//-- ****** Welcome Area End ******
+	//-- ****** Categories Area Start ******
+	section#about.categories_area.clearfix
 		.container
-			h1.display-4 Yggdrasil PUG Starter
-			p This application is made with @yggdrasilts architecture and PUG expressjs view engine.
-	.container
-		.row
-			.col-md
-				p
-					b Yggdrasil
-					|  (
-					span.nowrap
-						span.IPA.nopopups.noexcerpt
-							a(href="https://en.wikipedia.org/wiki/Help:IPA/English" title="Help:IPA/English" target="_blank")
-								| /
-								span(style="border-bottom:1px dotted")
-									span(title="/ˈ/: primary stress follows") ˈ
-									span(title="/ɪ/: 'i' in 'kit'") ɪ
-									span(title="/ɡ/: 'g' in 'guy'") ɡ
-									span(title="'d' in 'dye'") d
-									span(title="'r' in 'rye'") r
-									span(title="/ə/: 'a' in 'about'") ə
-									span(title="'s' in 'sigh'") s
-									span(title="/ɪ/: 'i' in 'kit'") ɪ
-									span(title="'l' in 'lie'") l
-								| /
-					|  or&nbsp;
-					span.nowrap
-						span.IPA.nopopups.noexcerpt
-							a(href="https://en.wikipedia.org/wiki/Help:IPA/English" title="Help:IPA/English" target="_blank")
-								| /
-								span(style="border-bottom:1px dotted")
-									span(title="/ˈ/: primary stress follows") ˈ
-									span(title="/ɪ/: 'i' in 'kit'") ɪ
-									span(title="/ɡ/: 'g' in 'guy'") ɡ
-									span(title="'d' in 'dye'") d
-									span(title="'r' in 'rye'") r
-									span(title="/ə/: 'a' in 'about'") ə
-									span(title="'z' in 'zoom'") z
-									span(title="/ɪ/: 'i' in 'kit'") ɪ
-									span(title="'l' in 'lie'") l
-								| /
-					| ; from&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Old_Norse" title="Old Norse" target="_blank") Old Norse&nbsp;
-					b
-						i
-							span(lang="non" xml:lang="non") Yggdrasill
-					| , pronounced&nbsp;
-					span.IPA(title="Representation in the International Phonetic Alphabet (IPA)")
-						a(href="https://en.wikipedia.org/wiki/Help:IPA" title="Help:IPA" target="_blank") [ˈyɡːˌdrasilː]
-					| ) is an immense&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Trees_in_mythology" title="Trees in mythology" target="_blank") mythical tree
-					|  that connects the nine worlds in&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Norse_cosmology" title="Norse cosmology" target="_blank") Norse cosmology
-					| .
-				p
-					| Yggdrasil is attested in the&nbsp;
-					i
-						a(href="https://en.wikipedia.org/wiki/Poetic_Edda" title="Poetic Edda" target="_blank") Poetic Edda
-					| , compiled in the 13th century from earlier traditional sources, and the&nbsp;
-					i
-						a(href="https://en.wikipedia.org/wiki/Prose_Edda" title="Prose Edda" target="_blank") Prose Edda
-					| , written in the 13th century by&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Snorri_Sturluson" title="Snorri Sturluson" target="_blank") Snorri Sturluson
-					| . In both sources, Yggdrasil is an immense&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Fraxinus_excelsior" title="Fraxinus excelsior" target="_blank") ash tree
-					|  that is center to the cosmos and considered very holy. The&nbsp;
-					a(href="https://en.wikipedia.org/wiki/%C3%86sir" title="Æsir" target="_blank") gods
-					|  go to Yggdrasil daily to assemble at their&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Thing_(assembly)" title="Thing (assembly)" target="_blank") things
-					| . The branches of Yggdrasil extend far into the heavens, and the tree is supported by three roots that extend far away into other locations; one to the well&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Ur%C3%B0arbrunnr" title="Urðarbrunnr" target="_blank") Urðarbrunnr
-					|  in the heavens, one to the spring&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Hvergelmir" title="Hvergelmir" target="_blank") Hvergelmir
-					| , and another to the well&nbsp;
-					a(href="https://en.wikipedia.org/wiki/M%C3%ADmisbrunnr" title="Mímisbrunnr" target="_blank") Mímisbrunnr
-					| . Creatures live within Yggdrasil, including the dragon&nbsp;
-					a(href="https://en.wikipedia.org/wiki/N%C3%AD%C3%B0h%C3%B6ggr" title="Níðhöggr" target="_blank") Níðhöggr
-					| , an&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Ve%C3%B0rf%C3%B6lnir_and_eagle" title="Veðrfölnir and eagle" target="_blank") unnamed eagle
-					| , and the stags&nbsp;
-					a(href="https://en.wikipedia.org/wiki/D%C3%A1inn,_Dvalinn,_Duneyrr_and_Dura%C3%BEr%C3%B3r" title="Dáinn, Dvalinn, Duneyrr and Duraþrór" target="_blank") Dáinn, Dvalinn, Duneyrr and Duraþrór
-					| .
-				p
-					| Conflicting scholarly theories have been proposed about the etymology of the name
-					i
-						span(lang="non" xml:lang="non") Yggdrasill
-					| , the possibility that the tree is of another species than ash, its connection to the many&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Sacred_trees_and_groves_in_Germanic_paganism_and_mythology" title="Sacred trees and groves in Germanic paganism and mythology" target="_blank") sacred trees and groves in Germanic paganism and mythology
-					| , and the fate of Yggdrasil during the events of&nbsp;
-					a(href="https://en.wikipedia.org/wiki/Ragnar%C3%B6k" title="Ragnarök" target="_blank") Ragnarök
-					| .
-					br
-					br
-					br
-					a.btn.btn-secondary(href="https://en.wikipedia.org/wiki/Yggdrasil" role="button" target="_blank") View details »
-		hr
+			.row
+				.col-12.col-md-6.col-lg-4
+					.single_catagory.wow.fadeInUp(data-wow-delay='.3s')
+						img(src='/img/catagory-img/1.jpg' alt='')
+						.catagory-title
+							a(href='#')
+								h5 Food
+				.col-12.col-md-6.col-lg-4
+					.single_catagory.wow.fadeInUp(data-wow-delay='.6s')
+						img(src='/img/catagory-img/2.jpg' alt='')
+						.catagory-title
+							a(href='#')
+								h5 Cooking
+				.col-12.col-md-6.col-lg-4
+					.single_catagory.wow.fadeInUp(data-wow-delay='.9s')
+						img(src='/img/catagory-img/3.jpg' alt='')
+						.catagory-title
+							a(href='#')
+								h5 Life Style
+	//-- ****** Categories Area End ******
+	//-- ****** Blog Area Start ******
+	section.blog_area.section_padding_0_80
+		.container
+			.row.justify-content-center
+				.col-12.col-lg-8
+					.row
+						//-- Single Post
+						.col-12
+							.single-post.wow.fadeInUp(data-wow-delay='.2s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/1.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h2.post-headline Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!
+									p
+										| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.
+									a.read-more(href='#') Continue Reading..
+						//-- Single Post
+						.col-12.col-md-6
+							.single-post.wow.fadeInUp(data-wow-delay='.4s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/2.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline Where To Get The Best Sunday Roast In The Cotswolds
+						//-- Single Post
+						.col-12.col-md-6
+							.single-post.wow.fadeInUp(data-wow-delay='.6s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/3.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline The Top Breakfast And Brunch Spots In Hove, Brighton
+						//-- Single Post
+						.col-12.col-md-6
+							.single-post.wow.fadeInUp(data-wow-delay='.8s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/4.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline The 10 Best Pubs In The Lake District, Cumbria
+						//-- Single Post
+						.col-12.col-md-6
+							.single-post.wow.fadeInUp(data-wow-delay='1s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/5.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline The 10 Best Brunch Spots In Newcastle, England
+						//-- ******* List Blog Area Start *******
+						//-- Single Post
+						.col-12
+							.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.2s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/6.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline The 10 Best Bars By The Seaside In Blackpool, UK
+									p
+										| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									a.read-more(href='#') Continue Reading..
+						//-- Single Post
+						.col-12
+							.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.4s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/7.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline How To Get a Narcissist to Feel Empathy
+									p
+										| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									a.read-more(href='#') Continue Reading..
+						//-- Single Post
+						.col-12
+							.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.6s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/8.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline Bristol&apos;s 10 Amazing Weekend Brunches And Late Breakfasts
+									p
+										| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									a.read-more(href='#') Continue Reading..
+						//-- Single Post
+						.col-12
+							.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.8s')
+								//-- Post Thumb
+								.post-thumb
+									img(src='/img/blog-img/9.jpg' alt='')
+								//-- Post Content
+								.post-content
+									.post-meta.d-flex
+										.post-author-date-area.d-flex
+											//-- Post Author
+											.post-author
+												a(href='#') By Marian
+											//-- Post Date
+											.post-date
+												a(href='#') May 19, 2017
+										//-- Post Comment & Share Area
+										.post-comment-share-area.d-flex
+											//-- Post Favourite
+											.post-favourite
+												a(href='#')
+													i.fa.fa-heart-o(aria-hidden='true')
+													|  10
+											//-- Post Comments
+											.post-comments
+												a(href='#')
+													i.fa.fa-comment-o(aria-hidden='true')
+													|  12
+											//-- Post Share
+											.post-share
+												a(href='#')
+													i.fa.fa-share-alt(aria-hidden='true')
+									a(href='#')
+										h4.post-headline 10 Of The Best Places To Eat In Liverpool, England
+									p
+										| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+									a.read-more(href='#') Continue Reading..
+				//-- ****** Blog Sidebar ******
+				.col-12.col-sm-8.col-md-6.col-lg-4
+					.blog-sidebar.mt-5.mt-lg-0
+						//-- Single Widget Area
+						.single-widget-area.about-me-widget.text-center
+							.widget-title
+								h6 About Me
+							.about-me-widget-thumb
+								img(src='/img/about-img/1.jpg' alt='')
+							h4.font-shadow-into-light Shopia Bernard
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+						//-- Single Widget Area
+						.single-widget-area.subscribe_widget.text-center
+							.widget-title
+								h6 Subscribe &amp; Follow
+							.subscribe-link
+								a(href='#')
+									i.fa.fa-facebook(aria-hidden='true')
+								a(href='#')
+									i.fa.fa-twitter(aria-hidden='true')
+								a(href='#')
+									i.fa.fa-google(aria-hidden='true')
+								a(href='#')
+									i.fa.fa-linkedin-square(aria-hidden='true')
+								a(href='#')
+									i.fa.fa-instagram(aria-hidden='true')
+								a(href='#')
+									i.fa.fa-vimeo(aria-hidden='true')
+						//-- Single Widget Area
+						.single-widget-area.popular-post-widget
+							.widget-title.text-center
+								h6 Populer Post
+							//-- Single Popular Post
+							.single-populer-post.d-flex
+								img(src='/img/sidebar-img/1.jpg' alt='')
+								.post-content
+									a(href='#')
+										h6 Top Wineries To Visit In England
+									p Tuesday, October 3, 2017
+							//-- Single Popular Post
+							.single-populer-post.d-flex
+								img(src='/img/sidebar-img/2.jpg' alt='')
+								.post-content
+									a(href='#')
+										h6 The 8 Best Gastro Pubs In Bath
+									p Tuesday, October 3, 2017
+							//-- Single Popular Post
+							.single-populer-post.d-flex
+								img(src='/img/sidebar-img/3.jpg' alt='')
+								.post-content
+									a(href='#')
+										h6 Zermatt Unplugged the best festival
+									p Tuesday, October 3, 2017
+							//-- Single Popular Post
+							.single-populer-post.d-flex
+								img(src='/img/sidebar-img/4.jpg' alt='')
+								.post-content
+									a(href='#')
+										h6 Harrogate&apos;s Top 10 Independent Eats
+									p Tuesday, October 3, 2017
+							//-- Single Popular Post
+							.single-populer-post.d-flex
+								img(src='/img/sidebar-img/5.jpg' alt='')
+								.post-content
+									a(href='#')
+										h6 Eating Out On A Budget In Oxford
+									p Tuesday, October 3, 2017
+						//-- Single Widget Area
+						.single-widget-area.add-widget.text-center
+							.add-widget-area
+								img(src='/img/sidebar-img/6.jpg' alt='')
+								.add-text
+									.yummy-table
+										.yummy-table-cell
+											h2 Cooking Book
+											p Buy Book Online Now!
+											a.add-btn(href='#') Buy Now
+						//-- Single Widget Area
+						.single-widget-area.newsletter-widget
+							.widget-title.text-center
+								h6 Newsletter
+							p
+								| Subscribe our newsletter gor get notification about new updates, information discount, etc.
+							.newsletter-form
+								form(action='#' method='post')
+									input#email(type='email' name='newsletter-email' placeholder='Your email')
+									button(type='submit')
+										i.fa.fa-paper-plane-o(aria-hidden='true')
+	//-- ****** Blog Area End ******
+	//-- ****** Instagram Area Start ******
+	#portfolio.instargram_area.owl-carousel.section_padding_100_0.clearfix
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/1.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/2.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/3.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/4.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/5.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/6.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/1.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+		//-- Instagram Item
+		.instagram_gallery_item
+			//-- Instagram Thumb
+			img(src='/img/instagram-img/2.jpg' alt='')
+			//-- Hover
+			.hover_overlay
+				.yummy-table
+					.yummy-table-cell
+						.follow-me.text-center
+							a(href='#')
+								i.fa.fa-instagram(aria-hidden='true')
+								|  Follow me
+	//-- ****** Our Creative Portfolio Area End ******
