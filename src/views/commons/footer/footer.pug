@@ -5,9 +5,9 @@ footer.footer_area
 		.row
 			.col-12
 				.footer-content
-					//-- Logo Area Start
-					.footer-logo-area.text-center
-						a.yummy-logo(href='index.html') Yummy Blog
+					//-- Include logo component on footer
+					- var logoArea = 'footer';
+					include ../components/logo.area.pug
 					//-- Menu Area Start
 					nav.navbar.navbar-expand-lg
 						button.navbar-toggler(type='button' data-toggle='collapse' data-target='#yummyfood-footer-nav' aria-controls='yummyfood-footer-nav' aria-expanded='false' aria-label='Toggle navigation')

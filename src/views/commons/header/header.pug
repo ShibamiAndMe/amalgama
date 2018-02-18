@@ -3,10 +3,9 @@ include header.top.pug
 header.header_area
 	.container
 		.row
-			//-- Logo Area Start
-			.col-12
-				.logo_area.text-center
-					a.yummy-logo(href='index.html') Yummy Blog
+			//-- Include logo component on header
+			- var logoArea = 'header';
+			include ../components/logo.area.pug
 		.row
 			.col-12
 				nav.navbar.navbar-expand-lg

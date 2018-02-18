@@ -1,17 +1,9 @@
 /** yggdrasil imports */
-import {
-	BaseRoutes,
-	Router
-} from '@yggdrasilts/mvc';
-import {
-	FileLogger
-} from '@yggdrasilts/core';
+import { BaseRoutes, Router } from '@yggdrasilts/mvc';
+import { FileLogger } from '@yggdrasilts/core';
 
 /** Application controllers imports */
-import {
-	HomeCtrl,
-	ContactCtrl
-} from '../controllers/routes';
+import { HomeCtrl, ContactCtrl } from '../controllers/routes';
 
 /**
  * @class HomeRoute
