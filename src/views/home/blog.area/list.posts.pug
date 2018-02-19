@@ -2,35 +2,15 @@
 //-- Single Post
 .col-12
 	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.2s')
-		//-- Post Thumb
-		.post-thumb
-			img(src='/img/blog-img/6.jpg' alt='')
+
+		- var thumb = { image: '/img/blog-img/6.jpg', alt: '' };
+		include ../../components/post/post.thumb.pug
+
 		//-- Post Content
 		.post-content
-			.post-meta.d-flex
-				.post-author-date-area.d-flex
-					//-- Post Author
-					.post-author
-						a(href='#') By Marian
-					//-- Post Date
-					.post-date
-						a(href='#') May 19, 2017
-				//-- Post Comment & Share Area
-				.post-comment-share-area.d-flex
-					//-- Post Favourite
-					.post-favourite
-						a(href='#')
-							i.fa.fa-heart-o(aria-hidden='true')
-							|  10
-					//-- Post Comments
-					.post-comments
-						a(href='#')
-							i.fa.fa-comment-o(aria-hidden='true')
-							|  12
-					//-- Post Share
-					.post-share
-						a(href='#')
-							i.fa.fa-share-alt(aria-hidden='true')
+
+			include ../../components/post/post.meta.info.pug
+
 			a(href='#')
 				h4.post-headline The 10 Best Bars By The Seaside In Blackpool, UK
 			p
@@ -39,35 +19,15 @@
 //-- Single Post
 .col-12
 	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.4s')
-		//-- Post Thumb
-		.post-thumb
-			img(src='/img/blog-img/7.jpg' alt='')
+
+		- var thumb = { image: '/img/blog-img/7.jpg', alt: '' };
+		include ../../components/post/post.thumb.pug
+
 		//-- Post Content
 		.post-content
-			.post-meta.d-flex
-				.post-author-date-area.d-flex
-					//-- Post Author
-					.post-author
-						a(href='#') By Marian
-					//-- Post Date
-					.post-date
-						a(href='#') May 19, 2017
-				//-- Post Comment & Share Area
-				.post-comment-share-area.d-flex
-					//-- Post Favourite
-					.post-favourite
-						a(href='#')
-							i.fa.fa-heart-o(aria-hidden='true')
-							|  10
-					//-- Post Comments
-					.post-comments
-						a(href='#')
-							i.fa.fa-comment-o(aria-hidden='true')
-							|  12
-					//-- Post Share
-					.post-share
-						a(href='#')
-							i.fa.fa-share-alt(aria-hidden='true')
+
+			include ../../components/post/post.meta.info.pug
+
 			a(href='#')
 				h4.post-headline How To Get a Narcissist to Feel Empathy
 			p
@@ -76,35 +36,15 @@
 //-- Single Post
 .col-12
 	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.6s')
-		//-- Post Thumb
-		.post-thumb
-			img(src='/img/blog-img/8.jpg' alt='')
+
+		- var thumb = { image: '/img/blog-img/8.jpg', alt: '' };
+		include ../../components/post/post.thumb.pug
+
 		//-- Post Content
 		.post-content
-			.post-meta.d-flex
-				.post-author-date-area.d-flex
-					//-- Post Author
-					.post-author
-						a(href='#') By Marian
-					//-- Post Date
-					.post-date
-						a(href='#') May 19, 2017
-				//-- Post Comment & Share Area
-				.post-comment-share-area.d-flex
-					//-- Post Favourite
-					.post-favourite
-						a(href='#')
-							i.fa.fa-heart-o(aria-hidden='true')
-							|  10
-					//-- Post Comments
-					.post-comments
-						a(href='#')
-							i.fa.fa-comment-o(aria-hidden='true')
-							|  12
-					//-- Post Share
-					.post-share
-						a(href='#')
-							i.fa.fa-share-alt(aria-hidden='true')
+
+			include ../../components/post/post.meta.info.pug
+
 			a(href='#')
 				h4.post-headline Bristol&apos;s 10 Amazing Weekend Brunches And Late Breakfasts
 			p
@@ -113,35 +53,15 @@
 //-- Single Post
 .col-12
 	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.8s')
-		//-- Post Thumb
-		.post-thumb
-			img(src='/img/blog-img/9.jpg' alt='')
+
+		- var thumb = { image: '/img/blog-img/9.jpg', alt: '' };
+		include ../../components/post/post.thumb.pug
+
 		//-- Post Content
 		.post-content
-			.post-meta.d-flex
-				.post-author-date-area.d-flex
-					//-- Post Author
-					.post-author
-						a(href='#') By Marian
-					//-- Post Date
-					.post-date
-						a(href='#') May 19, 2017
-				//-- Post Comment & Share Area
-				.post-comment-share-area.d-flex
-					//-- Post Favourite
-					.post-favourite
-						a(href='#')
-							i.fa.fa-heart-o(aria-hidden='true')
-							|  10
-					//-- Post Comments
-					.post-comments
-						a(href='#')
-							i.fa.fa-comment-o(aria-hidden='true')
-							|  12
-					//-- Post Share
-					.post-share
-						a(href='#')
-							i.fa.fa-share-alt(aria-hidden='true')
+
+			include ../../components/post/post.meta.info.pug
+
 			a(href='#')
 				h4.post-headline 10 Of The Best Places To Eat In Liverpool, England
 			p

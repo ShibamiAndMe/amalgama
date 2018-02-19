@@ -1,3 +1,9 @@
 //-- Post Thumb
+- var defaultThumb = { img: '/img/blog-img/10.jpg', alt: '' };
 .post-thumb
-	img(src='/img/blog-img/10.jpg' alt='')
+	if thumb && thumb.image && !thumb.alt
+		img(src= thumb.image)
+	else if thumb && thumb.image && thumb.alt
+		img(src= thumb.image, alt= thumb.alt)
+	else
+		img(src= defaultThumb.img, alt= defaultThumb.alt)

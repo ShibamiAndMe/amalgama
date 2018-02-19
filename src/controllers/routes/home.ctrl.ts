@@ -2,12 +2,13 @@
 import { Request, Response } from '@yggdrasilts/mvc';
 import { FileLogger } from '@yggdrasilts/core';
 
+import { BaseCtrl } from '../base.ctrl';
 import { IHome } from '../../components/components.interfaces';
 
 /**
  * @class HomeCtrl
  */
-export class HomeCtrl {
+export class HomeCtrl extends BaseCtrl {
 
 	/** HomeCtrl logger */
 	private logger: FileLogger;
@@ -16,15 +17,8 @@ export class HomeCtrl {
 
 	/** Default constructor */
 	constructor() {
+		super();
 		this.logger = new FileLogger(HomeCtrl.name);
-
-		this.homeData = {
-			commonComponents: {
-				logoAreaComponent: {
-					title: 'Shibami & Me'
-				}
-			}
-		};
 	}
 
 	/**
@@ -38,7 +32,7 @@ export class HomeCtrl {
 		this.logger.debug('go to home.');
 
 		res.render('home/home', {
-			data: this.homeData,
+			data: this.data,
 			title: 'Home'
 		});
 	}
@@ -54,7 +48,7 @@ export class HomeCtrl {
 		this.logger.debug('go to pages.');
 
 		res.render('pages/pages', {
-			data: this.homeData,
+			data: this.data,
 			title: 'Pages'
 		});
 	}
