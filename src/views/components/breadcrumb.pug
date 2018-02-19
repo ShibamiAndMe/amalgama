@@ -1,21 +1,28 @@
-//-- ****** Breadcumb Area Start ******
+- var defaultBC = { title: 'Post Title', items: [ { link: '/views/home', text: ' Home' }, { link: '#', text: 'Post' } ] };
 .breadcumb-area(style='background-image: url(/img/bg-img/breadcumb.jpg);')
 	.container.h-100
 		.row.h-100.align-items-center
 			.col-12
 				.bradcumb-title.text-center
-					h2 Single Post Blog
+					if breadcrumb && breadcrumb.title
+						h2= breadcrumb.title
+					else
+						h2= defaultBC.title
 .breadcumb-nav
 	.container
 		.row
 			.col-12
 				nav(aria-label='breadcrumb')
 					ol.breadcrumb
-						li.breadcrumb-item
-							a(href='#')
-								i.fa.fa-home(aria-hidden='true')
-								|  Home
-						li.breadcrumb-item
-							a(href='#') Archive
-						li.breadcrumb-item.active(aria-current='page') Single Post Blog
-//-- ****** Breadcumb Area End ******
+						- var items = (breadcrumb && breadcrumb.items) ? breadcrumb.items : defaultBC.items;
+						each item, index in items
+							if index === 0
+								li.breadcrumb-item
+									a(href=item.link)
+										i.fa.fa-home(aria-hidden='true')
+										= item.text
+							else if index === (items.length - 1)
+								li.breadcrumb-item.active(aria-current='page')= item.text
+							else
+								li.breadcrumb-item
+									a(href=item.link)= item.text

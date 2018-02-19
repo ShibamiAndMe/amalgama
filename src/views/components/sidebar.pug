@@ -1,89 +1,12 @@
-//-- ****** Blog Sidebar ******
 .col-12.col-sm-8.col-md-6.col-lg-4
 	.blog-sidebar.mt-5.mt-lg-0
-		//-- Single Widget Area
-		.single-widget-area.about-me-widget.text-center
-			.widget-title
-				h6 About Me
-			.about-me-widget-thumb
-				img(src='/img/about-img/1.jpg' alt='')
-			h4.font-shadow-into-light Shopia Bernard
-			p
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-		//-- Single Widget Area
-		.single-widget-area.subscribe_widget.text-center
-			.widget-title
-				h6 Subscribe &amp; Follow
-			.subscribe-link
-				a(href='#')
-					i.fa.fa-facebook(aria-hidden='true')
-				a(href='#')
-					i.fa.fa-twitter(aria-hidden='true')
-				a(href='#')
-					i.fa.fa-google(aria-hidden='true')
-				a(href='#')
-					i.fa.fa-linkedin-square(aria-hidden='true')
-				a(href='#')
-					i.fa.fa-instagram(aria-hidden='true')
-				a(href='#')
-					i.fa.fa-vimeo(aria-hidden='true')
-		//-- Single Widget Area
-		.single-widget-area.popular-post-widget
-			.widget-title.text-center
-				h6 Populer Post
-			//-- Single Popular Post
-			.single-populer-post.d-flex
-				img(src='/img/sidebar-img/1.jpg' alt='')
-				.post-content
-					a(href='#')
-						h6 Top Wineries To Visit In England
-					p Tuesday, October 3, 2017
-			//-- Single Popular Post
-			.single-populer-post.d-flex
-				img(src='/img/sidebar-img/2.jpg' alt='')
-				.post-content
-					a(href='#')
-						h6 The 8 Best Gastro Pubs In Bath
-					p Tuesday, October 3, 2017
-			//-- Single Popular Post
-			.single-populer-post.d-flex
-				img(src='/img/sidebar-img/3.jpg' alt='')
-				.post-content
-					a(href='#')
-						h6 Zermatt Unplugged the best festival
-					p Tuesday, October 3, 2017
-			//-- Single Popular Post
-			.single-populer-post.d-flex
-				img(src='/img/sidebar-img/4.jpg' alt='')
-				.post-content
-					a(href='#')
-						h6 Harrogate&apos;s Top 10 Independent Eats
-					p Tuesday, October 3, 2017
-			//-- Single Popular Post
-			.single-populer-post.d-flex
-				img(src='/img/sidebar-img/5.jpg' alt='')
-				.post-content
-					a(href='#')
-						h6 Eating Out On A Budget In Oxford
-					p Tuesday, October 3, 2017
-		//-- Single Widget Area
-		.single-widget-area.add-widget.text-center
-			.add-widget-area
-				img(src='/img/sidebar-img/6.jpg' alt='')
-				.add-text
-					.yummy-table
-						.yummy-table-cell
-							h2 Cooking Book
-							p Buy Book Online Now!
-							a.add-btn(href='#') Buy Now
-		//-- Single Widget Area
-		.single-widget-area.newsletter-widget
-			.widget-title.text-center
-				h6 Newsletter
-			p
-				| Subscribe our newsletter gor get notification about new updates, information discount, etc.
-			.newsletter-form
-				form(action='#' method='post')
-					input#email(type='email' name='newsletter-email' placeholder='Your email')
-					button(type='submit')
-						i.fa.fa-paper-plane-o(aria-hidden='true')
+
+		include widgets/about.me.pug
+
+		include widgets/subscribe.follow.pug
+
+		include widgets/popular.posts.pug
+
+		include widgets/book.pug
+
+		include widgets/newsletter.pug
