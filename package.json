@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@yggdrasilts/core": "canary",
 		"@yggdrasilts/mvc": "canary",
+		"@yggdrasilts/data": "canary",
 		"pug": "^2.0.0-rc.4"
 	},
 	"devDependencies": {

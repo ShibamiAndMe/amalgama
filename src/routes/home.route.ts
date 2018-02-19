@@ -1,6 +1,7 @@
 /** yggdrasil imports */
 import { BaseRoutes, Router } from '@yggdrasilts/mvc';
 import { FileLogger } from '@yggdrasilts/core';
+import { MongoDBRepository } from '@yggdrasilts/data';
 
 /** Application controllers imports */
 import { HomeCtrl, ContactCtrl } from '../controllers/routes';
@@ -20,10 +21,10 @@ export class HomeRoute extends BaseRoutes {
 	private contactCtrl: ContactCtrl;
 
 	/** Default constructor */
-	constructor(router: Router) {
+	constructor(router: Router, repository: MongoDBRepository) {
 		super();
 		this.logger = new FileLogger(HomeRoute.name);
-		this.homeCtrl = new HomeCtrl();
+		this.homeCtrl = new HomeCtrl(repository);
 		this.contactCtrl = new ContactCtrl();
 
 		/** Creates routes */

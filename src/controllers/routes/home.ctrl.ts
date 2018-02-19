@@ -1,9 +1,14 @@
 /** yggdrasil imports */
 import { Request, Response } from '@yggdrasilts/mvc';
 import { FileLogger } from '@yggdrasilts/core';
+import { MongoDBRepository } from '@yggdrasilts/data';
+
+import { MongoEntityManager } from 'typeorm';
+import { validate } from 'class-validator';
 
 import { BaseCtrl } from '../base.ctrl';
 import { IHome } from '../../components/components.interfaces';
+import { Post } from '../../repository/entities/Post';
 
 /**
  * @class HomeCtrl
@@ -13,12 +18,19 @@ export class HomeCtrl extends BaseCtrl {
 	/** HomeCtrl logger */
 	private logger: FileLogger;
 
+	/** Entity manager to acceed into db */
+	private repositoryManager: MongoEntityManager;
+
 	private homeData: IHome;
 
-	/** Default constructor */
-	constructor() {
+	/**
+	 * Default constructor
+	 * @param repository MongoDBRepository
+	 */
+	constructor(repository: MongoDBRepository) {
 		super();
 		this.logger = new FileLogger(HomeCtrl.name);
+		this.repositoryManager = repository.getManager();
 	}
 
 	/**
@@ -28,8 +40,11 @@ export class HomeCtrl extends BaseCtrl {
 	 * @param req Request
 	 * @param res Response
 	 */
-	public home = (req: Request, res: Response) => {
+	public home = async (req: Request, res: Response) => {
 		this.logger.debug('go to home.');
+
+		const posts = await this.repositoryManager.find(Post);
+		this.logger.debug(`Posts in db => ${JSON.stringify(posts)}`);
 
 		res.render('home/home', {
 			data: this.data,
