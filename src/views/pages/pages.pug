@@ -1,0 +1,16 @@
+extends ../layout/layout
+
+block content
+
+	include ../components/breadcrumb.pug
+
+	//-- ****** Single Blog Area Start ******
+	section.single_blog_area.section_padding_80
+		.container
+			.row.justify-content-center
+				.col-12.col-lg-8
+					.row.no-gutters
+						include ../components/post/post.pug
+
+				include ../components/sidebar.pug
+	//-- ****** Single Blog Area End ******

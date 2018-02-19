@@ -11,7 +11,7 @@ const options: IYggdrasilOptions = {
 		database: {
 			options: {
 				type: 'mongodb',
-				database: 'shibamiandme-blog'
+				database: 'amalgama'
 			}
 		},
 		views: {

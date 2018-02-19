@@ -1,0 +1,72 @@
+include post.share.info.pug
+//-- Single Post
+.col-10.col-sm-11
+	.single-post
+
+		include post.thumb.pug
+
+		//-- Post Content
+		.post-content
+			.post-meta.d-flex
+				.post-author-date-area.d-flex
+					//-- Post Author
+					.post-author
+						a(href='#') By Marian
+					//-- Post Date
+					.post-date
+						a(href='#') May 19, 2017
+				//-- Post Comment & Share Area
+				.post-comment-share-area.d-flex
+					//-- Post Favourite
+					.post-favourite
+						a(href='#')
+							i.fa.fa-heart-o(aria-hidden='true')
+							|  10
+					//-- Post Comments
+					.post-comments
+						a(href='#')
+							i.fa.fa-comment-o(aria-hidden='true')
+							|  12
+					//-- Post Share
+					.post-share
+						a(href='#')
+							i.fa.fa-share-alt(aria-hidden='true')
+			a(href='#')
+				h2.post-headline Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!
+			p
+				| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			blockquote.yummy-blockquote.mt-30.mb-30
+				h5.mb-30
+					| &ldquo;Technology is nothing. What&apos;s important is that you have a faith in people, that they&apos;re basically good and smart, and if you give them tools, they&apos;ll do wonderful things with them.&rdquo;
+				h6.text-muted Steven Jobs
+			h4 You Can Buy For Less Than A College Degree
+			p
+				| Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			img.br-30.mb-30(src='/img/blog-img/11.jpg' alt='')
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+			img.br-30.mb-30(src='/img/blog-img/12.jpg' alt='')
+			p
+				| Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			img.br-30.mb-30(src='/img/blog-img/13.jpg' alt='')
+			h4 You Can Buy For Less Than A College Degree
+			p
+				| Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit.
+			ul.mb-30
+				li 1/3 cup Lonsectetur adipisicing elit.Lorem ipsum
+				li 1/2 cup Veniam, quis nostrud exercitation
+				li Ut labore et dolore magna
+				li Lonsectetur adipisicing elit.Lorem ipsum
+				li Lonsectetur adipisicing elit.Lorem ipsum
+				li Ut labore et dolore magna
+				li Lonsectetur adipisicing elit.Lorem ipsum
+			img.br-30.mb-15(src='/img/blog-img/14.jpg' alt='')
+	//-- Tags Area
+	.tags-area
+		a(href='#') Multipurpose
+		a(href='#') Design
+		a(href='#') Ideas
+
+	include post.related.area.pug
+
+	include post.comments.pug

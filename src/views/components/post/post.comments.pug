@@ -1,0 +1,60 @@
+//-- Comment Area Start
+.comment_area.section_padding_50.clearfix
+	h4.mb-30 2 Comments
+	ol
+		//-- Single Comment Area
+		li.single_comment_area
+			.comment-wrapper.d-flex
+				//-- Comment Meta
+				.comment-author
+					img(src='/img/blog-img/17.jpg' alt='')
+				//-- Comment Content
+				.comment-content
+					span.comment-date.text-muted 27 Aug 2018
+					h5 Brandon Kelley
+					p
+						| Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.
+					a(href='#') Like
+					a.active(href='#') Reply
+			ol.children
+				li.single_comment_area
+					.comment-wrapper.d-flex
+						//-- Comment Meta
+						.comment-author
+							img(src='/img/blog-img/18.jpg' alt='')
+						//-- Comment Content
+						.comment-content
+							span.comment-date.text-muted 27 Aug 2018
+							h5 Brandon Kelley
+							p
+								| Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.
+							a(href='#') Like
+							a.active(href='#') Reply
+		li.single_comment_area
+			.comment-wrapper.d-flex
+				//-- Comment Meta
+				.comment-author
+					img(src='/img/blog-img/19.jpg' alt='')
+				//-- Comment Content
+				.comment-content
+					span.comment-date.text-muted 27 Aug 2018
+					h5 Brandon Kelley
+					p
+						| Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.
+					a(href='#') Like
+					a.active(href='#') Reply
+//-- Leave A Comment
+.leave-comment-area.section_padding_50.clearfix
+	.comment-form
+		h4.mb-30 Leave A Comment
+		//-- Comment Form
+		form(action='#' method='post')
+			.form-group
+				input#contact-name.form-control(type='text' placeholder='Name')
+			.form-group
+				input#contact-email.form-control(type='email' placeholder='Email')
+			.form-group
+				input#contact-website.form-control(type='text' placeholder='Website')
+			.form-group
+				textarea#message.form-control(name='message' cols='30' rows='10' placeholder='Message')
+			button.btn.contact-btn(type='submit') Post Comment

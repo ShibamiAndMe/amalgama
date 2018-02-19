@@ -44,6 +44,22 @@ export class HomeCtrl {
 	}
 
 	/**
+	 * Render pages page
+	 *
+	 * @method pages
+	 * @param req Request
+	 * @param res Response
+	 */
+	public pages = (req: Request, res: Response) => {
+		this.logger.debug('go to pages.');
+
+		res.render('pages/pages', {
+			data: this.homeData,
+			title: 'Pages'
+		});
+	}
+
+	/**
 	 * Render Contact page
 	 *
 	 * @method contact
