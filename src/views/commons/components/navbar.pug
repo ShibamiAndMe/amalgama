@@ -1,0 +1,17 @@
+.col-12
+	nav.navbar.navbar-expand-lg
+		//-- Collapsible menu
+		button.navbar-toggler(type='button' data-toggle='collapse' data-target='#amalgama-nav' aria-controls='amalgama-nav' aria-expanded='false' aria-label='Toggle navigation')
+			i.fa.fa-bars(aria-hidden='true') Menu
+		//-- Menu Area Start
+		#amalgama-nav.collapse.navbar-collapse.justify-content-center
+			ul#amalgama-nav.navbar-nav
+				li.nav-item(class=(title === 'Home') ? 'active' : undefined)
+					a.nav-link(href='/views/home') Home
+						span.sr-only (current)
+				li.nav-item(class=(title === 'Pages') ? 'active' : undefined)
+					a.nav-link(href='/views/pages') Pages
+				li.nav-item(class=(title === 'About') ? 'active' : undefined)
+					a.nav-link(href='#') About
+				li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
+					a.nav-link(href='contact.html') Contact
