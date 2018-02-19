@@ -1,25 +1,29 @@
 //-- Post Meta Info
+- var defaultShow = { author: true, comment: true };
+- var show = (meta && meta.show) ? meta.show : defaultShow
 .post-meta.d-flex
-	.post-author-date-area.d-flex
-		//-- Post Author
-		.post-author
-			a(href='#') By Marian
-		//-- Post Date
-		.post-date
-			a(href='#') May 19, 2017
-	//-- Post Comment & Share Area
-	.post-comment-share-area.d-flex
-		//-- Post Favourite
-		.post-favourite
-			a(href='#')
-				i.fa.fa-heart-o(aria-hidden='true')
-				|  10
-		//-- Post Comments
-		.post-comments
-			a(href='#')
-				i.fa.fa-comment-o(aria-hidden='true')
-				|  12
-		//-- Post Share
-		.post-share
-			a(href='#')
-				i.fa.fa-share-alt(aria-hidden='true')
+	if show.author
+		.post-author-date-area.d-flex
+			//-- Post Author
+			.post-author
+				a(href='#') By Marian
+			//-- Post Date
+			.post-date
+				a(href='#') May 19, 2017
+	if show.comment
+		//-- Post Comment & Share Area
+		.post-comment-share-area.d-flex
+			//-- Post Favourite
+			.post-favourite
+				a(href='#')
+					i.fa.fa-heart-o(aria-hidden='true')
+					|  10
+			//-- Post Comments
+			.post-comments
+				a(href='#')
+					i.fa.fa-comment-o(aria-hidden='true')
+					|  12
+			//-- Post Share
+			.post-share
+				a(href='#')
+					i.fa.fa-share-alt(aria-hidden='true')

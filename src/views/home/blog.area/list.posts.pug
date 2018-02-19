@@ -1,69 +1,18 @@
-//-- ******* List Blog Area Start *******
-//-- Single Post
-.col-12
-	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.2s')
+- var posts = [ { thumb: { image: '/img/blog-img/6.jpg', alt: '' }, title: 'The 10 Best Bars By The Seaside In Blackpool, UK', intro: 'Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation' }, { thumb: { image: '/img/blog-img/7.jpg', alt: '' }, title: 'How To Get a Narcissist to Feel Empathy', intro: 'Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation' }, { thumb: { image: '/img/blog-img/8.jpg', alt: '' }, title: 'Bristol&apos;s 10 Amazing Weekend Brunches And Late Breakfasts', intro: 'Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation' }, { thumb: { image: '/img/blog-img/9.jpg', alt: '' }, title: '10 Of The Best Places To Eat In Liverpool, England', intro: 'Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation' } ];
+each post in posts
+	//-- Single Post
+	.col-12
+		.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.2s')
 
-		- var thumb = { image: '/img/blog-img/6.jpg', alt: '' };
-		include ../../components/post/post.thumb.pug
+			- var thumb = { image: post.thumb.image, alt: post.thumb.alt };
+			include ../../components/post/post.thumb.pug
 
-		//-- Post Content
-		.post-content
+			//-- Post Content
+			.post-content
 
-			include ../../components/post/post.meta.info.pug
+				include ../../components/post/post.meta.info.pug
 
-			a(href='#')
-				h4.post-headline The 10 Best Bars By The Seaside In Blackpool, UK
-			p
-				| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-			a.read-more(href='#') Continue Reading..
-//-- Single Post
-.col-12
-	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.4s')
-
-		- var thumb = { image: '/img/blog-img/7.jpg', alt: '' };
-		include ../../components/post/post.thumb.pug
-
-		//-- Post Content
-		.post-content
-
-			include ../../components/post/post.meta.info.pug
-
-			a(href='#')
-				h4.post-headline How To Get a Narcissist to Feel Empathy
-			p
-				| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-			a.read-more(href='#') Continue Reading..
-//-- Single Post
-.col-12
-	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.6s')
-
-		- var thumb = { image: '/img/blog-img/8.jpg', alt: '' };
-		include ../../components/post/post.thumb.pug
-
-		//-- Post Content
-		.post-content
-
-			include ../../components/post/post.meta.info.pug
-
-			a(href='#')
-				h4.post-headline Bristol&apos;s 10 Amazing Weekend Brunches And Late Breakfasts
-			p
-				| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-			a.read-more(href='#') Continue Reading..
-//-- Single Post
-.col-12
-	.list-blog.single-post.d-sm-flex.wow.fadeInUpBig(data-wow-delay='.8s')
-
-		- var thumb = { image: '/img/blog-img/9.jpg', alt: '' };
-		include ../../components/post/post.thumb.pug
-
-		//-- Post Content
-		.post-content
-
-			include ../../components/post/post.meta.info.pug
-
-			a(href='#')
-				h4.post-headline 10 Of The Best Places To Eat In Liverpool, England
-			p
-				| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-			a.read-more(href='#') Continue Reading..
+				a(href='#')
+					h4.post-headline= post.title
+				p= post.intro
+				a.read-more(href='#') Continue Reading...

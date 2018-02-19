@@ -2,71 +2,19 @@
 .related-post-area.section_padding_50
 	h4.mb-30 Related post
 	.related-post-slider.owl-carousel
-		//-- Single Related Post
-		.single-post
-			//-- Post Thumb
-			.post-thumb
-				img(src='/img/blog-img/15.jpg' alt='')
-			//-- Post Content
-			.post-content
-				.post-meta.d-flex
-					.post-author-date-area.d-flex
-						//-- Post Author
-						.post-author
-							a(href='#') By Marian
-						//-- Post Date
-						.post-date
-							a(href='#') May 19, 2017
-				a(href='#')
-					h6 The Top Breakfast And Brunch Spots In Hove
-		//-- Single Related Post
-		.single-post
-			//-- Post Thumb
-			.post-thumb
-				img(src='/img/blog-img/5.jpg' alt='')
-			//-- Post Content
-			.post-content
-				.post-meta.d-flex
-					.post-author-date-area.d-flex
-						//-- Post Author
-						.post-author
-							a(href='#') By Marian
-						//-- Post Date
-						.post-date
-							a(href='#') May 19, 2017
-				a(href='#')
-					h6 The Top Breakfast And Brunch Spots In Hove
-		//-- Single Related Post
-		.single-post
-			//-- Post Thumb
-			.post-thumb
-				img(src='/img/blog-img/16.jpg' alt='')
-			//-- Post Content
-			.post-content
-				.post-meta.d-flex
-					.post-author-date-area.d-flex
-						//-- Post Author
-						.post-author
-							a(href='#') By Marian
-						//-- Post Date
-						.post-date
-							a(href='#') May 19, 2017
-				a(href='#')
-					h6 The Top Breakfast And Brunch Spots In Hove
-		//-- Single Related Post
-		.single-post
-			//-- Post Thumb
-			.post-thumb
-				img(src='/img/blog-img/5.jpg' alt='')
-			//-- Post Content
-			.post-content
-				.post-meta.d-flex
-					.post-author-date-area.d-flex
-						//-- Post Author
-						.post-author
-							a(href='#') By Marian
-						//-- Post Date
-						.post-date
-							a(href='#') May 19, 2017
-				a(href='#')
-					h6 The Top Breakfast And Brunch Spots In Hove
+		- var images = [ '/img/blog-img/15.jpg', '/img/blog-img/5.jpg', '/img/blog-img/16.jpg', '/img/blog-img/5.jpg' ];
+		each val in images
+			//-- Single Related Post
+			.single-post
+
+				- var thumb = { image: val, alt: '' };
+				include post.thumb.pug
+
+				//-- Post Content
+				.post-content
+
+					- var meta = { show: { author: true, comment: false } };
+					include post.meta.info.pug
+
+					a(href='#')
+						h6 The Top Breakfast And Brunch Spots In Hove

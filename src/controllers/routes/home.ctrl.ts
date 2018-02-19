@@ -38,7 +38,7 @@ export class HomeCtrl extends BaseCtrl {
 	}
 
 	/**
-	 * Render pages page
+	 * Render Pages page
 	 *
 	 * @method pages
 	 * @param req Request
@@ -64,6 +64,7 @@ export class HomeCtrl extends BaseCtrl {
 		this.logger.debug('go to contact.');
 
 		res.render('contact', {
+			data: this.data,
 			title: 'Contact'
 		});
 	}

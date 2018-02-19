@@ -1,0 +1,29 @@
+{
+	"posts": [
+		{
+			"id": "",
+			"title": "",
+			"text": "",
+			"author": {},
+			"tags": [],
+			"createdBy": "",
+			"meta": {
+				"featured-image": "",
+				"share-info": [],
+				"date": {
+					"created": "",
+					"updated": ""
+				},
+				"likes": ""
+			},
+			"related": [],
+			"comments": [
+				{
+					"author": "",
+					"comment": "",
+					"replies": []
+				}
+			]
+		}
+	]
+}
