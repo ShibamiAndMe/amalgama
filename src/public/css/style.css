@@ -509,7 +509,7 @@ li {
 	bottom: 0;
 }
 
-.welcome-single-slide .post-date-commnents a {
+.welcome-single-slide .post-date-comments a {
 	font-size: 14px;
 	font-weight: 400;
 	color: #fff;
@@ -518,15 +518,15 @@ li {
 	margin-bottom: 10px;
 }
 
-.welcome-single-slide .post-date-commnents a:hover {
+.welcome-single-slide .post-date-comments a:hover {
 	color: rgba(255, 255, 255, 0.9);
 }
 
-.welcome-single-slide .post-date-commnents a:first-child {
+.welcome-single-slide .post-date-comments a:first-child {
 	margin-right: 30px;
 }
 
-.welcome-single-slide .post-date-commnents a:first-child:after {
+.welcome-single-slide .post-date-comments a:first-child:after {
 	width: 2px;
 	height: 80%;
 	content: '';

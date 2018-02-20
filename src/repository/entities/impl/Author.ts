@@ -1,10 +1,10 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 
-import { IAuthorRepository } from './IAuthorRepository';
+import { IAuthor } from '../';
 
 @Entity()
-export class Author implements IAuthorRepository {
+export class Author implements IAuthor {
 
 	@ObjectIdColumn()
 	public id: ObjectID;

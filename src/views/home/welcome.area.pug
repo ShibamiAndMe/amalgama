@@ -1,15 +1,16 @@
-- var slides = [ { thumb: { image: '/img/bg-img/slide-1.jpg', alt: '' }, project: { date: 'May 19, 2017', numComments: '5 Comment', title: '"I\'ve Come and I\'m Gone": A Tribute to Istanbul\'s Street' } }, { thumb: { image: '/img/bg-img/slide-2.jpg', alt: '' }, project: { date: 'May 19, 2017', numComments: '5 Comment', title: '"I\'ve Come and I\'m Gone": A Tribute to Istanbul\'s Street' } }, { thumb: { image: '/img/bg-img/slide-3.jpg', alt: '' }, project: { date: 'May 19, 2017', numComments: '5 Comment', title: '"I\'ve Come and I\'m Gone": A Tribute to Istanbul\'s Street' } }, { thumb: { image: '/img/bg-img/slide-4.jpg', alt: '' }, project: { date: 'May 19, 2017', numComments: '5 Comment', title: '"I\'ve Come and I\'m Gone": A Tribute to Istanbul\'s Street' } }, { thumb: { image: '/img/bg-img/slide-4.jpg', alt: '' }, project: { date: 'May 19, 2017', numComments: '5 Comment', title: '"I\'ve Come and I\'m Gone": A Tribute to Istanbul\'s Street' } } ];
+- var slides = (data && data.pageData && data.pageData.welcomeArea && data.pageData.welcomeArea.slides) ? data.pageData.welcomeArea.slides : [];
 //-- ****** Welcome Post Area Start ******
 section.welcome-post-sliders.owl-carousel
-	each slide in slides
-		//-- Single Slide
-		.welcome-single-slide
-			//-- Post Thumb
-			img(src=slide.thumb.image alt=slide.thumb.alt)
-			//-- Overlay Text
-			.project_title
-				.post-date-commnents.d-flex
-					a(href='#')= slide.project.date
-					a(href='#')= slide.project.numComments
-				a(href='#')
-					h5= slide.project.title
+	if slides.length >= 1
+		each slide in slides
+			//-- Single Slide
+			.welcome-single-slide
+				//-- Post Thumb
+				img(src=slide.thumb.image alt=slide.thumb.alt)
+				//-- Overlay Text
+				.project_title
+					.post-date-comments.d-flex
+						a(href='#')= slide.project.date
+						a(href='#')= slide.project.numComments
+					a(href='#')
+						h5= slide.project.title

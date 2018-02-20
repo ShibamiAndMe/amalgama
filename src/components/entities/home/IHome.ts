@@ -1,18 +1,19 @@
 import { ICommonComponents } from '../common/common.interfaces';
-import { IPost } from '../../repository/entities/IPost';
+import { IPost, IAuthor, IThumb } from '../../repository/entities';
+
+interface IProject {
+	title: string;
+	date: string;
+	numComments: number;
+}
+
+interface ISlide {
+	thumb: IThumb;
+	project: IProject;
+}
 
 interface IWelcomeArea {
-	slides: {
-		thumb: {
-			image: string;
-			alt: string;
-		};
-		project: {
-			title: string;
-			date: string;
-			numComments: string;
-		};
-	}[];
+	slides: ISlide[];
 }
 
 interface ICategoriesArea {
@@ -24,34 +25,30 @@ interface IWidgetAbout {
 }
 
 interface IWidgetSubscribeFollow {
-
+	socialLink: string;
 }
 
 interface IWidgetPopularPosts {
-
+	posts: IPost[];
 }
 
 interface IWidgetBook {
-
-}
-
-interface IWidgetNewsLetter {
-
+	// TODO: Review this interface
+	nothing?: string;
 }
 
 interface ISideBar {
-	widgetAbout: IWidgetAbout;
-	widgetSubscribeFollow: IWidgetSubscribeFollow;
-	widgetPopularPosts: IWidgetPopularPosts;
-	widgetBook: IWidgetBook;
-	widgetNewsLetter: IWidgetNewsLetter;
+	widgetAbout?: IWidgetAbout;
+	widgetSubscribeFollow?: IWidgetSubscribeFollow;
+	widgetPopularPosts?: IWidgetPopularPosts;
+	widgetBook?: IWidgetBook;
 }
 
 interface IBlogArea {
 	featuredPost: IPost;
 	gridPosts: IPost[];
 	listPosts: IPost[];
-	sidebar: ISideBar;
+	sidebar?: ISideBar;
 }
 
 export interface IHome {

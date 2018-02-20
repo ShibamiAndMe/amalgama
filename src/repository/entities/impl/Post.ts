@@ -1,13 +1,11 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 
-import { IPostRepository } from './IPostRepository';
-
-import { Author } from './Author';
-import { Meta } from './Meta';
+import { IPost, IAuthor, IMeta } from '../';
+import { Author, Meta } from './';
 
 @Entity()
-export class Post implements IPostRepository {
+export class Post implements IPost {
 
 	@ObjectIdColumn()
 	public id: ObjectID;
@@ -25,9 +23,9 @@ export class Post implements IPostRepository {
 	public relatedPost: ObjectID[];
 
 	@Column(type => Author)
-	public author: Author;
+	public author: IAuthor;
 
 	@Column(type => Meta)
-	public meta: Meta;
+	public meta: IMeta;
 
 }
