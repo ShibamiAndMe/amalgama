@@ -1,7 +1,7 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 
-import { IPost, IAuthor, IMeta } from '../';
+import { IPost, IAuthor, IMeta, IPostContent } from '../';
 import { Author, Meta } from './';
 
 @Entity()
@@ -14,10 +14,13 @@ export class Post implements IPost {
 	public title: string;
 
 	@Column()
-	public content: string;
+	public content: IPostContent;
 
 	@Column()
 	public tags: string[];
+
+	@Column()
+	public featured: boolean;
 
 	@Column()
 	public relatedPost: ObjectID[];

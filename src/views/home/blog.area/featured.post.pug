@@ -1,17 +1,27 @@
 //-- Single Post
+- var featuredPost = (data && data.pageData && data.pageData.blogArea && data.pageData.blogArea.featuredPost) ? data.pageData.blogArea.featuredPost : {};
 .col-12
 	.single-post.wow.fadeInUp(data-wow-delay='.2s')
 
-		- var thumb = { image: '/img/blog-img/1.jpg', alt: 'Featured' };
+		- var thumb = { image: featuredPost.meta.featuredImage.thumb.image, alt: 'Featured' };
 		include ../../components/post/post.thumb.pug
 
 		//-- Post Content
 		.post-content
 
+			-
+				var meta = {
+					show: { author: true, commentAndShare: true },
+					//- TODO: When the author will be created.
+					authorArea: { author: 'Marian', date: 'May 19, 2017' },
+					commentsAndShareArea: {
+						likes: featuredPost.meta.likes,
+						numberOfComments: featuredPost.meta.numberOfComments
+					}
+				};
 			include ../../components/post/post.meta.info.pug
 
 			a(href='#')
-				h2.post-headline Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!
-			p
-				| Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.
+				h2.post-headline= featuredPost.title
+			p #{featuredPost.content.text.substring(0,120)} ...
 			a.read-more(href='#') Continue Reading..

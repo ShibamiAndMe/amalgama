@@ -51,14 +51,10 @@ export class HomeCtrl extends BaseCtrl {
 	public home = async (req: Request, res: Response) => {
 		this.logger.debug('go to home.');
 
-		// DELETE
-		await this.tempInsertData();
-		// DELETE
-
 		this.homeData = await this.getHomeData();
 
 		this.data.pageData = this.homeData;
-		this.logger.debug(`DATA => ${JSON.stringify(this.data.pageData.welcomeArea)}`);
+		this.logger.debug(`pageData => ${JSON.stringify(this.data.pageData, null, 2)}`);
 
 		res.render('home/home', {
 			data: this.data,
@@ -98,6 +94,12 @@ export class HomeCtrl extends BaseCtrl {
 		});
 	}
 
+	// DELETE {{{
+	public addTempPost = async (req: Request, res: Response) => {
+		await this.tempInsertData();
+		res.send({ message: 'Posts inserted' });
+	}
+
 	private getContent(): string {
 		return `<p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
@@ -132,23 +134,34 @@ export class HomeCtrl extends BaseCtrl {
 		<img class="br-30 mb-15" src="img/blog-img/14.jpg" alt="">`;
 	}
 
-	private tempInsertData() {
-		const newPost = new Post();
-		newPost.title = 'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!';
-		newPost.tags = ['Multipurpose', 'Design', 'Ideas'];
-		newPost.author = new Author();
-		newPost.meta = new Meta(10, 12, 'May 19, 2017', new FeaturedImage(new Thumb('/img/bg-img/slide-1.jpg')));
-		this.logger.debug(`NEW POST => ${JSON.stringify(newPost, null, 2)}`);
-		// newPost.content = this.getContent();
-		// const data = await this.repositoryManager.save(newPost);
+	private getStringContent(): string {
+		return `equat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.You Can Buy For Less Than A College DegreeLiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit.`;
 	}
+
+	private async tempInsertData() {
+		const iter = [1, 2, 3, 4];
+		for (const num of iter) {
+			const newPost = new Post();
+			newPost.title = 'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!';
+			newPost.tags = ['Multipurpose', 'Design', 'Ideas'];
+			(num === 1) ? newPost.featured = true : newPost.featured = false;
+			newPost.author = new Author();
+			newPost.meta = new Meta(10, 12, 'May 19, 2017', new FeaturedImage(new Thumb(`/img/bg-img/slide-${num}.jpg`)));
+			// this.logger.debug(`NEW POST => ${JSON.stringify(newPost, null, 2)}`);
+			newPost.content = {
+				html: this.getContent(),
+				text: this.getStringContent()
+			};
+			const data = await this.repositoryManager.save(newPost);
+		}
+	}
+	// }}} DELETE
 
 	private async getHomeData(): Promise<Home> {
 		const homeData = new Home();
 
 		const posts = await this.repositoryManager.find(Post);
 		this.logger.debug(`Posts in db => ${posts.length}`);
-		this.logger.debug(`POST => ${JSON.stringify(posts[0], null, 2)}`);
 
 		homeData.welcomeArea = await this.getWelcomeData(posts);
 		homeData.categoriesArea = await this.getCategoriesArea();
@@ -183,6 +196,14 @@ export class HomeCtrl extends BaseCtrl {
 	private async getBlogArea(): Promise<IBlogArea> {
 		const blogArea = new BlogArea();
 
+		blogArea.featuredPost = await this.getFeaturedPost();
+
 		return blogArea;
+	}
+
+	private async getFeaturedPost(): Promise<IPost> {
+		const post = await this.repositoryManager.findOne(Post, { featured: true });
+		this.logger.debug(`FeaturedPost => ${JSON.stringify(post, null, 2)}`);
+		return post;
 	}
 }

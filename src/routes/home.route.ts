@@ -45,6 +45,9 @@ export class HomeRoute extends BaseRoutes {
 		router.route('/contact').get(this.homeCtrl.contact);
 
 		router.route('/sendContactInfo').post(this.contactCtrl.showContactInfo);
+
+		// DELETE
+		router.route('/addPost').get(this.homeCtrl.addTempPost);
 	}
 
 }
