@@ -1,1 +1,1 @@
-# shibamiandme-blog
+# Amalgama

@@ -17,3 +17,6 @@ yarn.lock
 
 # log files
 *.log
+
+# trash files
+.trash
