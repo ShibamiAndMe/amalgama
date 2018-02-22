@@ -1,2 +1,2 @@
 export * from './common/common.interfaces';
-export * from './home/home.interfaces';
+export * from './entities/home';

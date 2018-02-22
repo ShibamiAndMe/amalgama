@@ -8,8 +8,15 @@ import { validate } from 'class-validator';
 
 import { BaseCtrl } from '../base.ctrl';
 
-import { IHome } from '../../components/components.interfaces';
-import { Post, Author, Meta, FeaturedImage, Thumb } from '../../repository/entities';
+import {
+	IHome, ISlide, ICategoriesArea, IWelcomeArea, IBlogArea,
+	Home, CategoriesArea, WelcomeArea, BlogArea
+} from '../../components/components.interfaces';
+
+import {
+	IPost,
+	Post, Author, Meta, FeaturedImage, Thumb
+} from '../../repository/entities';
 
 /**
  * @class HomeCtrl
@@ -45,48 +52,10 @@ export class HomeCtrl extends BaseCtrl {
 		this.logger.debug('go to home.');
 
 		// DELETE
-		const post = new Post();
-		post.title = 'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!';
-		post.tags = ['Multipurpose', 'Design', 'Ideas'];
-		post.author = new Author();
-		post.meta = new Meta(10, 12, 'May 19, 2017', new FeaturedImage(new Thumb('/img/bg-img/slide-1.jpg')));
-		this.logger.debug(`NEW POST => ${JSON.stringify(post, null, 2)}`);
-		// post.content = this.getContent();
-		// const data = await this.repositoryManager.save(post);
+		await this.tempInsertData();
 		// DELETE
 
-		const posts = await this.repositoryManager.find(Post);
-		this.logger.debug(`Posts in db => ${posts.length}`);
-
-		this.logger.debug(`POST => ${JSON.stringify(posts[0], null, 2)}`);
-
-		const slides: ISlides[];
-
-		this.homeData = {
-			welcomeArea: {
-				slides: [
-					{
-						thumb: {
-							image: posts[0].meta.featuredImage.thumb.image,
-							alt: ''
-						},
-						project: {
-							title: posts[0].title,
-							date: posts[0].meta.createdDate,
-							numComments: posts[0].meta.numberOfComments
-						}
-					}
-				]
-			},
-			categoriesArea: {
-				tags: ['One', 'Two', 'Three']
-			},
-			blogArea: {
-				featuredPost: posts[0],
-				gridPosts: posts,
-				listPosts: posts
-			}
-		};
+		this.homeData = await this.getHomeData();
 
 		this.data.pageData = this.homeData;
 		this.logger.debug(`DATA => ${JSON.stringify(this.data.pageData.welcomeArea)}`);
@@ -161,5 +130,59 @@ export class HomeCtrl extends BaseCtrl {
 		</ul>
 
 		<img class="br-30 mb-15" src="img/blog-img/14.jpg" alt="">`;
+	}
+
+	private tempInsertData() {
+		const newPost = new Post();
+		newPost.title = 'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!';
+		newPost.tags = ['Multipurpose', 'Design', 'Ideas'];
+		newPost.author = new Author();
+		newPost.meta = new Meta(10, 12, 'May 19, 2017', new FeaturedImage(new Thumb('/img/bg-img/slide-1.jpg')));
+		this.logger.debug(`NEW POST => ${JSON.stringify(newPost, null, 2)}`);
+		// newPost.content = this.getContent();
+		// const data = await this.repositoryManager.save(newPost);
+	}
+
+	private async getHomeData(): Promise<Home> {
+		const homeData = new Home();
+
+		const posts = await this.repositoryManager.find(Post);
+		this.logger.debug(`Posts in db => ${posts.length}`);
+		this.logger.debug(`POST => ${JSON.stringify(posts[0], null, 2)}`);
+
+		homeData.welcomeArea = await this.getWelcomeData(posts);
+		homeData.categoriesArea = await this.getCategoriesArea();
+		homeData.blogArea = await this.getBlogArea();
+
+		return homeData;
+	}
+
+	private async getWelcomeData(posts: IPost[]): Promise<WelcomeArea> {
+		const welcomeArea = new WelcomeArea();
+		await posts.forEach(post => {
+			welcomeArea.slides.push({
+				thumb: {
+					image: post.meta.featuredImage.thumb.image,
+				},
+				project: {
+					title: post.title,
+					date: post.meta.createdDate,
+					numComments: post.meta.numberOfComments
+				}
+			});
+		});
+		return welcomeArea;
+	}
+
+	private async getCategoriesArea(): Promise<ICategoriesArea> {
+		const categories = new CategoriesArea();
+		await ['One', 'Two', 'Three'].forEach(tag => categories.tags.push((tag)));
+		return categories;
+	}
+
+	private async getBlogArea(): Promise<IBlogArea> {
+		const blogArea = new BlogArea();
+
+		return blogArea;
 	}
 }

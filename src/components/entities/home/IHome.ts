@@ -1,50 +1,50 @@
-import { ICommonComponents } from '../common/common.interfaces';
-import { IPost, IAuthor, IThumb } from '../../repository/entities';
+import { ICommonComponents } from '../../common/common.interfaces';
+import { IPost, IAuthor, IThumb } from '../../../repository/entities';
 
-interface IProject {
+export interface IProject {
 	title: string;
 	date: string;
 	numComments: number;
 }
 
-interface ISlide {
+export interface ISlide {
 	thumb: IThumb;
 	project: IProject;
 }
 
-interface IWelcomeArea {
+export interface IWelcomeArea {
 	slides: ISlide[];
 }
 
-interface ICategoriesArea {
+export interface ICategoriesArea {
 	tags: string[];
 }
 
-interface IWidgetAbout {
+export interface IWidgetAbout {
 	author: IAuthor;
 }
 
-interface IWidgetSubscribeFollow {
+export interface IWidgetSubscribeFollow {
 	socialLink: string;
 }
 
-interface IWidgetPopularPosts {
+export interface IWidgetPopularPosts {
 	posts: IPost[];
 }
 
-interface IWidgetBook {
+export interface IWidgetBook {
 	// TODO: Review this interface
 	nothing?: string;
 }
 
-interface ISideBar {
+export interface ISideBar {
 	widgetAbout?: IWidgetAbout;
 	widgetSubscribeFollow?: IWidgetSubscribeFollow;
 	widgetPopularPosts?: IWidgetPopularPosts;
 	widgetBook?: IWidgetBook;
 }
 
-interface IBlogArea {
+export interface IBlogArea {
 	featuredPost: IPost;
 	gridPosts: IPost[];
 	listPosts: IPost[];
