@@ -65,6 +65,7 @@ export class HomeCtrl extends BaseCtrl {
 	private async getHomeData(): Promise<Home> {
 		const homeData = new Home();
 
+		// TODO: Order by date
 		const posts = await this.repositoryManager.find(Post);
 		this.logger.debug(`Posts in db => ${posts.length}`);
 
@@ -85,7 +86,7 @@ export class HomeCtrl extends BaseCtrl {
 				project: {
 					postTitle: post.title,
 					postId: post.id.toString(),
-					date: post.meta.createdDate,
+					date: post.meta.createdDate.toString(),
 					numComments: post.meta.numberOfComments
 				}
 			});

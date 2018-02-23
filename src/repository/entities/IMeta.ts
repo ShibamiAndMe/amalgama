@@ -3,6 +3,6 @@ import { IFeaturedImage } from './';
 export interface IMeta {
 	likes: number;
 	numberOfComments: number;
-	createdDate: string;
+	createdDate: Date;
 	featuredImage: IFeaturedImage;
 }

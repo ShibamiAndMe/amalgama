@@ -12,12 +12,12 @@ export class Meta implements IMeta {
 	public numberOfComments: number;
 
 	@Column()
-	public createdDate: string;
+	public createdDate: Date;
 
 	@Column()
 	public featuredImage: IFeaturedImage;
 
-	constructor(likes: number, numberOfComments: number, createdDate: string, featuredImage: IFeaturedImage) {
+	constructor(likes: number, numberOfComments: number, createdDate: Date, featuredImage: IFeaturedImage) {
 		this.likes = likes;
 		this.numberOfComments = numberOfComments;
 		this.createdDate = createdDate;

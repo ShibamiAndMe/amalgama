@@ -75,20 +75,32 @@ export class HelperCtrl {
 	}
 
 	private async tempInsertData() {
-		const iter = [1, 2, 3, 4];
+		const iter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 		const titles = [
 			'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!',
 			'Lonsectetur adipisicing elit. Lorem ipsum.',
 			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-			'Ut labore et dolore magna'
+			'Ut labore et dolore magna',
+			'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!',
+			'Lonsectetur adipisicing elit. Lorem ipsum.',
+			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+			'Ut labore et dolore magna',
+			'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!',
+			'Lonsectetur adipisicing elit. Lorem ipsum.'
 		];
+		const dates = [ 'May 10, 2017', 'May 11, 2017', 'May 12, 2017', 'May 13, 2017', 'May 14, 2017',
+						'May 15, 2017', 'May 16, 2017', 'May 17, 2017', 'May 18, 2017', 'May 19, 2017'
+		];
+		let imgNum = 1;
 		for (const num of iter) {
 			const newPost = new Post();
 			newPost.title = titles[num - 1];
 			newPost.tags = ['Multipurpose', 'Design', 'Ideas'];
 			(num === 1) ? newPost.featured = true : newPost.featured = false;
 			newPost.author = new Author();
-			newPost.meta = new Meta(10, 12, 'May 19, 2017', new FeaturedImage(new Thumb(`/img/bg-img/slide-${num}.jpg`)));
+
+			newPost.meta = new Meta(10, 12, new Date(dates[num - 1]), new FeaturedImage(new Thumb(`/img/bg-img/slide-${imgNum}.jpg`)));
+			(imgNum === 4) ? imgNum = 1 : imgNum++;
 			// this.logger.debug(`NEW POST => ${JSON.stringify(newPost, null, 2)}`);
 			newPost.content = {
 				html: this.getContent(),
