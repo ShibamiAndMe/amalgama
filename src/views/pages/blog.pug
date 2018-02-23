@@ -2,6 +2,21 @@ extends ../layout/layout
 
 block content
 
+	- var dbPost = (data && data.pageData && data.pageData.post) ? data.pageData.post : {};
+	-
+		var breadcrumb = {
+			title: dbPost.title,
+			items: [
+				{
+					link: '/views/home',
+					text: ' Home'
+				},
+				{
+					link: '#',
+					text: dbPost.title
+				}
+			]
+		};
 	include ../components/breadcrumb.pug
 
 	//-- ****** Single Blog Area Start ******

@@ -5,7 +5,8 @@ import { Router } from '@yggdrasilts/mvc';
 import { MongoDBRepository } from '@yggdrasilts/data';
 
 /** Application imports */
-import { HomeRoute } from './routes/home.route';
+import { AmalgamaRoute } from './routes/amalgama.route';
+import { HelperRoute } from './routes/api/helper.route';
 
 /**
  * @class YggdrasilServer
@@ -26,7 +27,12 @@ export class YggdrasilServer extends Bootstrap {
 	 * @param router Express Router
 	 */
 	public routes(router: Router, repository: MongoDBRepository) {
-		const homeRoute = new HomeRoute(router, repository);
+		const amalgamaRoute = new AmalgamaRoute(router, repository);
+	}
+
+	public api(router: Router, repository: MongoDBRepository): IBootstrapRoute {
+		const helperRoute = new HelperRoute(router, repository);
+		return { prefix: '/api' };
 	}
 
 }

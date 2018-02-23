@@ -12,5 +12,5 @@ section.welcome-post-sliders.owl-carousel
 					.post-date-comments.d-flex
 						a(href='#')= slide.project.date
 						a(href='#')= slide.project.numComments
-					a(href='#')
-						h5= slide.project.title
+					a(href='/views/post/' + slide.project.postId)
+						h5= slide.project.postTitle

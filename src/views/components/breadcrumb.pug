@@ -1,27 +1,37 @@
-- var defaultBC = { title: 'Post Title', items: [ { link: '/views/home', text: ' Home' }, { link: '#', text: 'Post' } ] };
+-
+	var defaultBC = {
+		title: 'Post Title',
+		items: [
+			{
+				link: '/views/home',
+				text: ' Home'
+			},
+			{
+				link: '#',
+				text: 'Post'
+			}
+		]
+	};
+	var breadcrumb = (breadcrumb) ? Object.assign({}, defaultBC, breadcrumb) : defaultBC;
 .breadcumb-area(style='background-image: url(/img/bg-img/breadcumb.jpg);')
 	.container.h-100
 		.row.h-100.align-items-center
 			.col-12
 				.bradcumb-title.text-center
-					if breadcrumb && breadcrumb.title
-						h2= breadcrumb.title
-					else
-						h2= defaultBC.title
+					h2= breadcrumb.title
 .breadcumb-nav
 	.container
 		.row
 			.col-12
 				nav(aria-label='breadcrumb')
 					ol.breadcrumb
-						- var items = (breadcrumb && breadcrumb.items) ? breadcrumb.items : defaultBC.items;
-						each item, index in items
+						each item, index in breadcrumb.items
 							if index === 0
 								li.breadcrumb-item
 									a(href=item.link)
 										i.fa.fa-home(aria-hidden='true')
 										= item.text
-							else if index === (items.length - 1)
+							else if index === (breadcrumb.items.length - 1)
 								li.breadcrumb-item.active(aria-current='page')= item.text
 							else
 								li.breadcrumb-item

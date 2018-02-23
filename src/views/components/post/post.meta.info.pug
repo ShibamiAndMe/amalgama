@@ -5,7 +5,7 @@
 		authorArea: { author: 'Marian', date: 'May 19, 2017' },
 		commentsAndShareArea: { likes: 10, numberOfComments: 12 }
 	};
-	var metaInfo = (meta) ? meta : defaultMeta;
+	var metaInfo = (meta) ? Object.assign({}, defaultMeta, meta ) : defaultMeta;
 
 .post-meta.d-flex
 	if metaInfo.show.author

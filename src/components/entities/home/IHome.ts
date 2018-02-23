@@ -2,7 +2,8 @@ import { ICommonComponents } from '../../common/common.interfaces';
 import { IPost, IAuthor, IThumb } from '../../../repository/entities';
 
 export interface IProject {
-	title: string;
+	postTitle: string;
+	postId: string;
 	date: string;
 	numComments: number;
 }
@@ -48,6 +49,11 @@ export interface IBlogArea {
 	featuredPost: IPost;
 	gridPosts: IPost[];
 	listPosts: IPost[];
+	sidebar?: ISideBar;
+}
+
+export interface IPostPage {
+	post: IPost;
 	sidebar?: ISideBar;
 }
 

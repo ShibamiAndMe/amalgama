@@ -4,35 +4,36 @@ import { FileLogger } from '@yggdrasilts/core';
 import { MongoDBRepository } from '@yggdrasilts/data';
 
 /** Application controllers imports */
-import { HomeCtrl, ContactCtrl } from '../controllers/routes';
+import { PostCtrl } from '../controllers/routes';
 
 /**
- * @class HomeRoute
+ * @class PagesRoute
  */
-export class HomeRoute {
+export class PagesRoute {
 
-	/** HomeRoute logger */
+	/** PagesRoute logger */
 	public logger: FileLogger;
 
-	/** HomeCtrl Ctrl */
-	private homeCtrl: HomeCtrl;
+	/** PostCtrl Ctrl */
+	private postCtrl: PostCtrl;
 
 	/** Default constructor */
 	constructor(repository: MongoDBRepository) {
-		this.logger = new FileLogger(HomeRoute.name);
-		this.homeCtrl = new HomeCtrl(repository);
+		this.logger = new FileLogger(PagesRoute.name);
+		this.postCtrl = new PostCtrl(repository);
 	}
 
 	/**
 	 * Creates routes.
 	 *
-	 * @class HomeRoute
+	 * @class PagesRoute
 	 * @method createRoutes
 	 */
 	public createRoutes(router: Router) {
-		this.logger.debug('Creating Home routes.');
+		this.logger.debug('Creating PagesRoute routes.');
 
-		router.route('/home').get(this.homeCtrl.home);
+		router.route('/post/:id').get(this.postCtrl.showPost);
+
 	}
 
 }

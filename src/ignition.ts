@@ -7,7 +7,7 @@ import { YggdrasilServer } from './server';
 
 const options: IYggdrasilOptions = {
 	application: {
-		type: EApplicationType.WEB,
+		type: EApplicationType.HYBRID,
 		database: {
 			options: {
 				type: 'mongodb',
