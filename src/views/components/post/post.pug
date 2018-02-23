@@ -11,8 +11,8 @@ include post.share.info.pug
 
 			include post.meta.info.pug
 
-			a(href='#')
-				h2.post-headline= dbPost.title
+			//- a(href='#')
+			h2.post-headline= dbPost.title
 			!= dbPost.content.html
 			//-
 				p

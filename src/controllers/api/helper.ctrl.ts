@@ -78,7 +78,7 @@ export class HelperCtrl {
 		const iter = [1, 2, 3, 4];
 		const titles = [
 			'Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!',
-			'Lonsectetur adipisicing elit.Lorem ipsum',
+			'Lonsectetur adipisicing elit. Lorem ipsum.',
 			'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
 			'Ut labore et dolore magna'
 		];

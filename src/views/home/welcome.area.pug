@@ -6,7 +6,8 @@ section.welcome-post-sliders.owl-carousel
 			//-- Single Slide
 			.welcome-single-slide
 				//-- Post Thumb
-				img(src=slide.thumb.image alt=slide.thumb.alt)
+				a(href='/views/post/' + slide.project.postId)
+					img(src=slide.thumb.image alt=slide.thumb.alt)
 				//-- Overlay Text
 				.project_title
 					.post-date-comments.d-flex
