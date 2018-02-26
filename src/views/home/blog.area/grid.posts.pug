@@ -1,10 +1,11 @@
-- var posts = [ { thumb: { image: '/img/blog-img/2.jpg', alt: '' }, title: 'Where To Get The Best Sunday Roast In The Cotswolds' }, { thumb: { image: '/img/blog-img/3.jpg', alt: '' }, title: 'The Top Breakfast And Brunch Spots In Hove, Brighton' }, { thumb: { image: '/img/blog-img/4.jpg', alt: '' }, title: 'The 10 Best Pubs In The Lake District, Cumbria' }, { thumb: { image: '/img/blog-img/5.jpg', alt: '' }, title: 'The 10 Best Brunch Spots In Newcastle, England' } ];
-each post in posts
+-
+	var gridPosts = (data && data.pageData && data.pageData.blogArea && data.pageData.blogArea.gridPosts) ? data.pageData.blogArea.gridPosts : [];
+each post in gridPosts
 	//-- Single Post
 	.col-12.col-md-6
 		.single-post.wow.fadeInUp(data-wow-delay='.4s')
 
-			- var thumb = { image: post.thumb.image, alt: post.thumb.alt };
+			- var thumb = { image: post.meta.featuredImage.thumb.image, alt: post.meta.featuredImage.thumb.alt };
 			include ../../components/post/post.thumb.pug
 
 			//-- Post Content
@@ -12,5 +13,5 @@ each post in posts
 
 				include ../../components/post/post.meta.info.pug
 
-				a(href='#')
+				a(href='/views/post/' + post.id)
 					h4.post-headline= post.title

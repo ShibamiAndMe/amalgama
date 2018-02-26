@@ -14,8 +14,9 @@
 	},
 	"dependencies": {
 		"@yggdrasilts/core": "canary",
-		"@yggdrasilts/mvc": "canary",
 		"@yggdrasilts/data": "canary",
+		"@yggdrasilts/mvc": "canary",
+		"lodash": "^4.17.5",
 		"pug": "^2.0.0-rc.4"
 	},
 	"devDependencies": {

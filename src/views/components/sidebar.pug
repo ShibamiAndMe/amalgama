@@ -3,24 +3,25 @@
 	var widgetsToShow = {
 		aboutMe: false,
 		subscribeAndFollow: false,
-		popularPost: true,
+		popularPost: false,
 		book: false,
 		newsletter: true
 	};
-.col-12.col-sm-8.col-md-6.col-lg-4
-	.blog-sidebar.mt-5.mt-lg-0
+if (widgetsToShow.aboutMe || widgetsToShow.subscribeAndFollow || widgetsToShow.popularPost || widgetsToShow.book || widgetsToShow.newsletter)
+	.col-12.col-sm-8.col-md-6.col-lg-4
+		.blog-sidebar.mt-5.mt-lg-0
 
-		if widgetsToShow.aboutMe
-			include widgets/about.me.pug
+			if widgetsToShow.aboutMe
+				include widgets/about.me.pug
 
-		if widgetsToShow.subscribeAndFollow
-			include widgets/subscribe.follow.pug
+			if widgetsToShow.subscribeAndFollow
+				include widgets/subscribe.follow.pug
 
-		if widgetsToShow.popularPost
-			include widgets/popular.posts.pug
+			if widgetsToShow.popularPost
+				include widgets/popular.posts.pug
 
-		if widgetsToShow.book
-			include widgets/book.pug
+			if widgetsToShow.book
+				include widgets/book.pug
 
-		if widgetsToShow.newsletter
-			include widgets/newsletter.pug
+			if widgetsToShow.newsletter
+				include widgets/newsletter.pug

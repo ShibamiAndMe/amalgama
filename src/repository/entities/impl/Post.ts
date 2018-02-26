@@ -29,6 +29,6 @@ export class Post implements IPost {
 	public author: IAuthor;
 
 	@Column(type => Meta)
-	public meta: IMeta;
+	public meta: Meta;
 
 }

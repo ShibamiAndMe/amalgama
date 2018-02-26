@@ -18,6 +18,8 @@ import {
 	Post, Author, Meta, FeaturedImage, Thumb
 } from '../../repository/entities';
 
+import * as _ from 'lodash';
+
 /**
  * @class HomeCtrl
  */
@@ -65,13 +67,14 @@ export class HomeCtrl extends BaseCtrl {
 	private async getHomeData(): Promise<Home> {
 		const homeData = new Home();
 
-		// TODO: Order by date
-		const posts = await this.repositoryManager.find(Post);
+		let posts = await this.repositoryManager.find(Post);
+		// Order by date desc
+		posts = await _.orderBy(posts, ['meta.createdDate'], ['desc']);
 		this.logger.debug(`Posts in db => ${posts.length}`);
 
 		homeData.welcomeArea = await this.getWelcomeData(posts);
 		homeData.categoriesArea = await this.getCategoriesArea();
-		homeData.blogArea = await this.getBlogArea();
+		homeData.blogArea = await this.getBlogArea(posts);
 
 		return homeData;
 	}
@@ -100,10 +103,12 @@ export class HomeCtrl extends BaseCtrl {
 		return categories;
 	}
 
-	private async getBlogArea(): Promise<IBlogArea> {
+	private async getBlogArea(posts: IPost[]): Promise<IBlogArea> {
 		const blogArea = new BlogArea();
 
 		blogArea.featuredPost = await this.getFeaturedPost();
+		blogArea.gridPosts = await this.getGridPosts(posts);
+		blogArea.listPosts = await this.getListPosts(posts);
 
 		return blogArea;
 	}
@@ -112,5 +117,13 @@ export class HomeCtrl extends BaseCtrl {
 		const post = await this.repositoryManager.findOne(Post, { featured: true });
 		this.logger.debug(`FeaturedPost => ${JSON.stringify(post, null, 2)}`);
 		return post;
+	}
+
+	private async getGridPosts(posts: IPost[]): Promise<IPost[]> {
+		return _.take(posts, 4);
+	}
+
+	private async getListPosts(posts: IPost[]): Promise<IPost[]> {
+		return _.take(posts, 4);
 	}
 }
