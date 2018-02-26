@@ -11,6 +11,7 @@ each post in listPosts
 			//-- Post Content
 			.post-content
 
+				- var meta = { authorArea: { date: moment(post.meta.createdDate, moment.ISO_8601).format('ll') } };
 				include ../../components/post/post.meta.info.pug
 
 				a(href='/views/post/' + post.id)

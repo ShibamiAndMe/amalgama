@@ -2,6 +2,7 @@ import { Column } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 
 import { IMeta, IFeaturedImage } from '../';
+import { Moment } from 'moment';
 
 export class Meta implements IMeta {
 

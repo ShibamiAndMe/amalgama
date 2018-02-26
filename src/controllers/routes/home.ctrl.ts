@@ -56,7 +56,7 @@ export class HomeCtrl extends BaseCtrl {
 		this.homeData = await this.getHomeData();
 
 		this.data.pageData = this.homeData;
-		this.logger.debug(`pageData => ${JSON.stringify(this.data.pageData, null, 2)}`);
+		// this.logger.debug(`pageData => ${JSON.stringify(this.data.pageData, null, 2)}`);
 
 		res.render('home/home', {
 			data: this.data,
@@ -108,14 +108,14 @@ export class HomeCtrl extends BaseCtrl {
 
 		blogArea.featuredPost = await this.getFeaturedPost();
 		blogArea.gridPosts = await this.getGridPosts(posts);
-		blogArea.listPosts = await this.getListPosts(posts);
+		blogArea.listPosts = await this.getListPosts(_.takeRight(posts, (posts.length - 4)));
 
 		return blogArea;
 	}
 
 	private async getFeaturedPost(): Promise<IPost> {
 		const post = await this.repositoryManager.findOne(Post, { featured: true });
-		this.logger.debug(`FeaturedPost => ${JSON.stringify(post, null, 2)}`);
+		// this.logger.debug(`FeaturedPost => ${JSON.stringify(post, null, 2)}`);
 		return post;
 	}
 

@@ -13,7 +13,7 @@
 				var meta = {
 					show: { author: true, commentAndShare: true },
 					//- TODO: When the author will be created.
-					authorArea: { author: 'Marian', date: 'May 19, 2017' },
+					authorArea: { author: 'Marian', date: moment(featuredPost.meta.createdDate, moment.ISO_8601).format('ll') },
 					commentsAndShareArea: {
 						likes: featuredPost.meta.likes,
 						numberOfComments: featuredPost.meta.numberOfComments

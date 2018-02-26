@@ -11,7 +11,7 @@ section.welcome-post-sliders.owl-carousel
 				//-- Overlay Text
 				.project_title
 					.post-date-comments.d-flex
-						a(href='#')= slide.project.date
+						a(href='#')= moment(slide.project.date, moment.ISO_8601).format('ll')
 						a(href='#')= slide.project.numComments
 					a(href='/views/post/' + slide.project.postId)
 						h5= slide.project.postTitle

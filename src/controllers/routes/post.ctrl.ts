@@ -49,14 +49,14 @@ export class PostCtrl extends BaseCtrl {
 		this.logger.debug(`Show post ${postId}`);
 
 		const postDBData = await this.repositoryManager.findOneById(Post, postId);
-		this.logger.debug(`${JSON.stringify(postDBData, null, 2)}`);
+		// this.logger.debug(`${JSON.stringify(postDBData, null, 2)}`);
 
 		this.postData = {
 			post: postDBData
 		};
 
 		this.data.pageData = this.postData;
-		this.logger.debug(`pageData => ${JSON.stringify(this.data.pageData, null, 2)}`);
+		// this.logger.debug(`pageData => ${JSON.stringify(this.data.pageData, null, 2)}`);
 
 		res.render('pages/blog', {
 			data: this.data,

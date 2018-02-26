@@ -8,6 +8,9 @@ import { MongoDBRepository } from '@yggdrasilts/data';
 import { AmalgamaRoute } from './routes/amalgama.route';
 import { HelperRoute } from './routes/api/helper.route';
 
+import * as express from 'express';
+import * as moment from 'moment';
+
 /**
  * @class YggdrasilServer
  */
@@ -33,6 +36,10 @@ export class YggdrasilServer extends Bootstrap {
 	public api(router: Router, repository: MongoDBRepository): IBootstrapRoute {
 		const helperRoute = new HelperRoute(router, repository);
 		return { prefix: '/api' };
+	}
+
+	public config(app: express.Application) {
+		app.locals.moment = moment;
 	}
 
 }

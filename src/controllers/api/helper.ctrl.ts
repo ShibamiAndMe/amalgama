@@ -10,6 +10,8 @@ import { BaseCtrl } from '../base.ctrl';
 
 import { Post, Author, Meta, FeaturedImage, Thumb } from '../../repository/entities';
 
+import * as moment from 'moment';
+
 /**
  * @class HelperCtrl
  */
@@ -99,7 +101,7 @@ export class HelperCtrl {
 			(num === 1) ? newPost.featured = true : newPost.featured = false;
 			newPost.author = new Author();
 
-			newPost.meta = new Meta(10, 12, new Date(dates[num - 1]), new FeaturedImage(new Thumb(`/img/bg-img/slide-${imgNum}.jpg`)));
+			newPost.meta = new Meta(10, 12, moment(dates[num - 1]).toDate(), new FeaturedImage(new Thumb(`/img/bg-img/slide-${imgNum}.jpg`)));
 			(imgNum === 4) ? imgNum = 1 : imgNum++;
 			// this.logger.debug(`NEW POST => ${JSON.stringify(newPost, null, 2)}`);
 			newPost.content = {
