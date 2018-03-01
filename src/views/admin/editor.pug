@@ -1,0 +1,21 @@
+extends ../layout/layout
+
+block content
+
+	// Create the editor container
+	quill-element(style='height: 1000px;')
+	//-
+		#editor
+			p Hello World!
+			p
+				| Some initial
+				strong bold
+				|  text
+			p
+				br
+
+		// Initialize Quill editor
+		script.
+			var quill = new Quill('#editor', {
+				theme: 'snow'
+			});
