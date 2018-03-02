@@ -3,7 +3,7 @@ extends ../layout/layout
 block content
 
 	// Create the editor container
-	quill-element(style='height: 1000px;')
+	quill-element(style='height: 600px;', on-text-change="console.log('test');")
 	//-
 		#editor
 			p Hello World!
