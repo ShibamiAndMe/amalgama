@@ -5,6 +5,7 @@ import { MongoDBRepository } from '@yggdrasilts/data';
 
 /** Application controllers imports */
 import { PostCtrl } from '../controllers/routes';
+import { EditorCtrl } from '../controllers/routes/admin/editor.ctrl';
 
 /**
  * @class PagesRoute
@@ -17,10 +18,14 @@ export class PagesRoute {
 	/** PostCtrl Ctrl */
 	private postCtrl: PostCtrl;
 
+	/** EditorCtrl Ctrl */
+	private editorCtrl: EditorCtrl;
+
 	/** Default constructor */
 	constructor(repository: MongoDBRepository) {
 		this.logger = new FileLogger(PagesRoute.name);
 		this.postCtrl = new PostCtrl(repository);
+		this.editorCtrl = new EditorCtrl();
 	}
 
 	/**
@@ -33,6 +38,8 @@ export class PagesRoute {
 		this.logger.debug('Creating PagesRoute routes.');
 
 		router.route('/post/:id').get(this.postCtrl.showPost);
+
+		router.route('/editor').get(this.editorCtrl.showEditor);
 
 	}
 
