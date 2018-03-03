@@ -4,17 +4,25 @@ $(document).ready(function () {
 	tinymce.init({
 		selector: '#tinymceTextarea',
 		height: 300,
-		max_height: 600,
+		autoresize_bottom_margin: 50,
+		autoresize_max_height: 1500,
 		menubar: false,
-		plugins: ['lists', 'link', 'image', 'emoticons' ],
+		plugins: [ 'autoresize', 'lists', 'link', 'image', 'emoticons' ],
 		toolbar: [
 			'undo redo | styleselect | fontselect | bullist | link image emoticons',
 			'fontsizeselect | bold italic underline forecolor backcolor | alignleft aligncenter alignright alignjustify | subscript superscript | indent outdent | blockquote removeformat'
 		],
 		setup: function (editor) {
+			// On init event. Used to add initial content if exist.
+			editor.on('init', function(e) {
+				// tinymce.activeEditor.setContent('<h1>Titulo</h1>\n<p>Ahora va una&nbsp;imagen&nbsp;<img src="../js/tinymce/plugins/emoticons/img/smiley-embarassed.gif" alt="embarassed" />:</p>\n<p><img class="br-30 mb-30" src="../img/blog-img/12.jpg" alt="Imagen" width="400" height="267" /></p>\n<blockquote class="yummy-blockquote">\n<p>Blockquote</p>\n<h6 class="text-muted">con Autor</h6>\n</blockquote>\n<p>Ahora va un poco de texto con <strong>negrita</strong>, <em>cursiva</em> y <span style="text-decoration: underline;">subrayado</span>.</p>\n<p>Una peque&ntilde;a lista:</p>\n<ul>\n<li>Punto uno</li>\n<li>Punto dos</li>\n<li>Punto tres</li>\n</ul>\n<p>Un <a title="enlace" href="editor" target="_blank" rel="noopener">enlace</a>.</p>\n<p style="text-align: center;">Ahora texto&nbsp;centrado.</p>\n<p style="text-align: right;">Texto a derechas.</p>\n<p style="text-align: justify;">Texto justificado.</p>\n<p>Y final.</p>');
+				liveTinyMCE();
+			});
+			// On change event. Used to modify the preview section when there is some change in the editor.
 			editor.on('change', function (e) {
 				liveTinyMCE();
 			});
+			// On keyup event. Used to modify the preview section when the text inside the editor is changed.
 			editor.on('keyup', function (e) {
 				liveTinyMCE();
 			});
