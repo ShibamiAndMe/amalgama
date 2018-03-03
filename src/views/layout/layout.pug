@@ -7,6 +7,7 @@ html
 		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		//-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags
 
+		//-- CSS
 		//-- Title
 		title= data.layoutComponent.blogTitle
 		//-- Favicon
@@ -16,26 +17,7 @@ html
 		//-- Responsive CSS
 		link(href='/css/responsive/responsive.css' rel='stylesheet')
 
-		//-- QuillJS
-		link(href='https://cdn.quilljs.com/1.1.6/quill.snow.css' rel='stylesheet')
-		script(src='/js/quill/webcomponentsjs/webcomponents-lite.js')
-		script(type='text/javascript' src='/js/quill/highlightjs/highlight.pack.min.js')
-		link(rel='stylesheet' href='/js/quill/KaTeX/dist/katex.min.css')
-		script(type='text/javascript' src='/js/quill/KaTeX/dist/katex.min.js')
-		link(rel='import' href='/js/quill/polymer/polymer.html')
-		link(rel='import' href='/js/quill/quill-element.html')
-		script(src='https://cdn.quilljs.com/1.1.6/quill.js')
-
-	body
-		//-- Preloader Start
-		#preloader
-			.yummy-load
-		include ../commons/header/header
-
-		block content
-
-		include ../commons/footer/footer
-
+		//-- SCRIPTS
 		//-- Jquery-2.2.4 js
 		script(src='/js/jquery/jquery-2.2.4.min.js')
 		//-- Popper js
@@ -48,3 +30,13 @@ html
 		script(src='/js/active.js')
 		//-- Main app JS
 		script(src='/js/main.js')
+
+	body
+		//-- Preloader Start
+		#preloader
+			.yummy-load
+		include ../commons/header/header
+
+		block content
+
+		include ../commons/footer/footer

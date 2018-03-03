@@ -2,20 +2,7 @@ extends ../layout/layout
 
 block content
 
-	// Create the editor container
-	quill-element(style='height: 600px;', on-text-change="console.log('test');")
-	//-
-		#editor
-			p Hello World!
-			p
-				| Some initial
-				strong bold
-				|  text
-			p
-				br
-
-		// Initialize Quill editor
-		script.
-			var quill = new Quill('#editor', {
-				theme: 'snow'
-			});
+	#dialog(title='TinyMCE dialog' style='display: none')
+		textarea
+	button#open(type='button') Open
+	//- script.
