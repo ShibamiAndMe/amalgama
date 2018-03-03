@@ -3,13 +3,17 @@ extends ../layout/layout
 block content
 
 	.px-3.mx-3
-		.row.pb-3
+		//- .row.py-3
 			button#tinymceSaveButton(type='button' class='btn btn-success') Save
 		.row
 			.col-md-6
+				.input-group.input-group-lg.pb-3
+					.input-group-prepend
+						span#inputGroup-sizing-lg.input-group-text.input-group-addon.info Título
+					input#postTitle.form-control(type='text' aria-label='Large' aria-describedby='inputGroup-sizing-sm')
 				#tinymceTextarea(placeholder='write something')
 				.row.pt-3
 					button#tinymceSaveButton(type='button' class='btn btn-success') Save
 			.col-md-6
 				#tinymceHtml(class='single_blog_area')
-					p Here will appear your text...
+					p Here it will appear your content...

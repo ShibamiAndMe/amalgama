@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+	var postTitleObj = $('#postTitle');
+	var postTitle = { html: '', text: '' };
+	postTitleObj.on("keyup", function(eventObj) {
+		postTitle.html = '<h2 class="post-headline">' + postTitleObj.val() + '</h2>';
+		postTitle.text = postTitleObj.val();
+		liveTinyMCE();
+	});
+
 	// TinyMCE Editor
 	tinymce.init({
 		selector: '#tinymceTextarea',
@@ -45,16 +53,14 @@ $(document).ready(function () {
 		tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('blockquote'), 'yummy-blockquote');
 
 		// Update live editor
-		$('#tinymceHtml').html(tinymce.activeEditor.getContent());
+		$('#tinymceHtml').html(postTitle.html + tinymce.activeEditor.getContent());
 	}
 
 	$('#tinymceSaveButton').click(function () {
 		var data = {
 			content: {
-				html: tinymce.activeEditor.getContent(),
-				text: tinymce.activeEditor.getContent({
-					format: 'text'
-				})
+				html: postTitle.html + '\n' + tinymce.activeEditor.getContent(),
+				text: postTitle.text + '\n' + tinymce.activeEditor.getContent({ format: 'text' })
 			}
 		};
 		$.ajax({
