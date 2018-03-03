@@ -37,6 +37,7 @@ export class HelperRoute extends BaseRoutes {
 		this.logger.debug('Creating HelperCtrl routes.');
 
 		router.route('/add').get(this.helperCtrl.addTempPost);
+		router.route('/post/add').post(this.helperCtrl.addPost);
 
 	}
 

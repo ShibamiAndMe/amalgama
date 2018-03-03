@@ -32,6 +32,11 @@ export class HelperCtrl {
 		this.repositoryManager = repository.getManager();
 	}
 
+	public addPost = async (req: Request, res: Response) => {
+		console.log(req.body);
+		res.send();
+	}
+
 	// DELETE {{{
 	public addTempPost = async (req: Request, res: Response) => {
 		await this.tempInsertData();
