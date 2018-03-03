@@ -2,7 +2,20 @@ extends ../layout/layout
 
 block content
 
-	#dialog(title='TinyMCE dialog' style='display: none')
-		textarea
-	button#open(type='button') Open
-	//- script.
+	#textarea
+	#btn1(type='button')
+		| button
+
+	script.
+		tinymce.init({
+			selector: '#textarea',
+			init_instance_callback: function (editor) {
+				editor.on('Change', function (e) {
+					console.log('Editor contents was changed.', e);
+				});
+			}
+		});
+		$('#btn1').click(function() {
+			console.log(tinymce.activeEditor.getContent());
+		});
+
