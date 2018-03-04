@@ -1,13 +1,5 @@
 $(document).ready(function () {
 
-	var postTitleObj = $('#postTitle');
-	var postTitle = { html: '', text: '' };
-	postTitleObj.on("keyup", function(eventObj) {
-		postTitle.html = '<h2 class="post-headline">' + postTitleObj.val() + '</h2>';
-		postTitle.text = postTitleObj.val();
-		liveTinyMCE();
-	});
-
 	// TinyMCE Editor
 	tinymce.init({
 		selector: '#tinymceTextarea',
@@ -37,6 +29,41 @@ $(document).ready(function () {
 		}
 	});
 
+	// editor.pug components
+	var $postTitle = $('#postTitle');
+	var $saveButton = $('#tinymceSaveButton');
+	var $tinymceHtml = $('#tinymceHtml');
+	var $postTags = $("#postTags");
+	var $tinymceTags = $("#tinymceTags");
+
+	var postTitle = { html: '', text: '' };
+	// TODO: init tags
+	var tags = [];//$postTags.tagit('assignedTags');
+
+	$postTags.tagit({
+		showAutocompleteOnFocus: false,
+		allowSpaces: true,
+		removeConfirmation: true,
+		availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"],
+		afterTagAdded: (event, ui) => {
+			$tinymceTags.append('<a class="mr-1">' + ui.tagLabel + '</a>');
+			tags.push(ui.tagLabel);
+		},
+		afterTagRemoved: (event, ui) => {
+			console.log($tinymceTags.children()[0].text);
+			for (var i = 0; i < $tinymceTags.children().length; i++) {
+				if ($tinymceTags.children()[i].text === ui.tagLabel) {
+					$tinymceTags.children()[i].remove();
+					tags.splice(tags.indexOf(ui.tagLabel), 1);
+				}
+			}
+		}
+	});
+
+	function initTags(tags) {
+		if (tags != null && tags.length > 0) tags.forEach(tag => $tinymceTags.append('<a class="mr-1">' + tag + '</a>'));
+	}
+
 	function liveTinyMCE() {
 		// STYLING CODE
 		// HEADERS
@@ -53,19 +80,30 @@ $(document).ready(function () {
 		tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('blockquote'), 'yummy-blockquote');
 
 		// Update live editor
-		$('#tinymceHtml').html(postTitle.html + tinymce.activeEditor.getContent());
+		$tinymceHtml.html(postTitle.html + tinymce.activeEditor.getContent());
 	}
 
-	$('#tinymceSaveButton').click(function () {
+	$postTitle.on("keyup", function(eventObj) {
+		postTitle.html = '<h2 class="post-headline">' + $postTitle.val() + '</h2>';
+		postTitle.text = $postTitle.val();
+		liveTinyMCE();
+	});
+
+	$saveButton.click(function (eventObj) {
 		var data = {
+			title: {
+				html: postTitle.html,
+				text: postTitle.text
+			},
 			content: {
-				html: postTitle.html + '\n' + tinymce.activeEditor.getContent(),
-				text: postTitle.text + '\n' + tinymce.activeEditor.getContent({ format: 'text' })
-			}
+				html: tinymce.activeEditor.getContent(),
+				text: tinymce.activeEditor.getContent({ format: 'text' })
+			},
+			tags: $postTags.tagit('assignedTags')
 		};
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/api/post/add',
+			url: '/api/post/add',
 			data: JSON.stringify(data),
 			contentType: 'application/json',
 			dataType: 'json'

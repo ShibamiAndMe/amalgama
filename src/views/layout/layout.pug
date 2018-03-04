@@ -12,6 +12,11 @@ html
 		title= data.layoutComponent.blogTitle
 		//-- Favicon
 		link(rel='icon' href='/img/core-img/favicon.ico')
+		//-- jQuery-ui
+		link(href='/js/third-party/jquery-ui/jquery-ui-theme.min.css' rel='stylesheet')
+		//-- Tag-it
+		link(href='/js/third-party/tag-it/css/jquery.tagit.css' rel='stylesheet')
+		link(href='/js/third-party/tag-it/css/tagit.ui-zendesk.css' rel='stylesheet')
 		//-- Core Stylesheet
 		link(href='/css/style.css' rel='stylesheet')
 		//-- Responsive CSS
@@ -19,10 +24,14 @@ html
 		//-- Main application Stylesheet
 		link(href='/css/main.css' rel='stylesheet')
 
-		//-- Jquery-2.2.4 js
-		script(src='/js/jquery/jquery-2.2.4.min.js')
+		//-- jQuery
+		script(src='/js/third-party/jquery/jquery-2.2.4.min.js')
+		//-- jQuery-ui
+		script(src='/js/third-party/jquery-ui/jquery-ui.min.js')
+		//-- Tag-it
+		script(src='/js/third-party/tag-it/js/tag-it.min.js')
 		//-- TinyMCE
-		script(src='/js/tinymce/tinymce.min.js')
+		script(src='/js/third-party/tinymce/tinymce.min.js')
 
 	body
 		//-- Preloader Start
@@ -35,15 +44,13 @@ html
 		include ../commons/footer/footer
 
 		//-- SCRIPTS
-		//-- Jquery-2.2.4 js
-		//-- script(src='/js/jquery/jquery-2.2.4.min.js')
 		//-- Popper js
-		script(src='/js/bootstrap/popper.min.js')
+		script(src='/js/third-party/bootstrap/popper.min.js')
 		//-- Bootstrap-4 js
-		script(src='/js/bootstrap/bootstrap.min.js')
+		script(src='/js/third-party/bootstrap/bootstrap.min.js')
 		//-- All Plugins JS
-		script(src='/js/others/plugins.js')
+		script(src='/js/third-party/others/plugins.js')
 		//-- Active JS
-		script(src='/js/active.js')
+		script(src='/js/third-party/active.js')
 		//-- Main app JS
 		script(src='/js/main.js')
