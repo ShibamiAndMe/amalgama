@@ -48,8 +48,12 @@ export class PostCtrl extends BaseCtrl {
 		const postId = req.params.id;
 		this.logger.debug(`Show post ${postId}`);
 
-		const postDBData = await this.repositoryManager.findOneById(Post, postId);
-		// this.logger.debug(`${JSON.stringify(postDBData, null, 2)}`);
+		let postDBData = await this.repositoryManager.findOneById(Post, postId);
+		this.logger.debug(`BEFORE => ${JSON.stringify(postDBData, null, 2)}`);
+
+		postDBData = await this.encodePostData(postDBData);
+
+		this.logger.debug(`AFTER => ${JSON.stringify(postDBData, null, 2)}`);
 
 		this.postData = {
 			post: postDBData
@@ -62,6 +66,16 @@ export class PostCtrl extends BaseCtrl {
 			data: this.data,
 			title: 'Pages'
 		});
+	}
+
+	private async encodePostData(post: Post): Promise<Post> {
+		// Encode emoticons
+		post.content.html = await this.replaceAll(post.content.html, 'src="../js/third-party/tinymce/plugins/emoticons/img/', 'src="/js/third-party/tinymce/plugins/emoticons/img/');
+		return post;
+	}
+
+	private replaceAll(data: string, search: string, replacement: string) {
+		return data.split(search).join(replacement);
 	}
 
 }

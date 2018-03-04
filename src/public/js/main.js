@@ -101,12 +101,19 @@ $(document).ready(function () {
 			},
 			tags: $postTags.tagit('assignedTags')
 		};
-		$.ajax({
+		var request = $.ajax({
 			type: 'POST',
 			url: '/api/post/add',
 			data: JSON.stringify(data),
 			contentType: 'application/json',
 			dataType: 'json'
+		});
+		request.done(function(data, textStatus, jqXHR) {
+			console.log('DONE:', data, textStatus, jqXHR);
+		});
+
+		request.fail(function(jqXHR, textStatus, errorThrown) {
+			console.log('FAIL:', jqXHR, textStatus, errorThrown);
 		});
 	});
 

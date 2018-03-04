@@ -3,8 +3,6 @@ extends ../layout/layout
 block content
 
 	.px-3.mx-3
-		//- .row.py-3
-			button#tinymceSaveButton(type='button' class='btn btn-success') Save
 		.row
 			.col-md-6
 				.input-group.input-group-lg.pb-3
@@ -22,17 +20,3 @@ block content
 				#tinymceHtml(class='single_blog_area')
 					p Here it will appear your content...
 				#tinymceTags.tags-area
-//-
-	script(type='text/javascript').
-		$(document).ready(function() {
-			$("#postTags").tagit({
-				showAutocompleteOnFocus: true,
-				allowSpaces: true,
-				availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"],
-				afterTagAdded: function(event, ui) {
-					$("#tinymceTags").append('<a class="mr-1">' + ui.tagLabel + '</a>')
-				}
-			});
-			var tags = $("#postTags").tagit('assignedTags');
-			tags.forEach(tag => $("#tinymceTags").append('<a class="mr-1">' + tag + '</a>'));
-		});

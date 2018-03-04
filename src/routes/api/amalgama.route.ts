@@ -4,24 +4,24 @@ import { FileLogger } from '@yggdrasilts/core';
 import { MongoDBRepository } from '@yggdrasilts/data';
 
 /** Application controllers imports */
-import { HelperCtrl } from '../../controllers/api/helper.ctrl';
+import { AmalgamaCtrl } from '../../controllers/api/amalgama.ctrl';
 
 /**
- * @class HelperRoute
+ * @class AmalgamaAPIRoute
  */
-export class HelperRoute extends BaseRoutes {
+export class AmalgamaAPIRoute extends BaseRoutes {
 
-	/** HelperRoute logger */
+	/** AmalgamaAPIRoute logger */
 	public logger: FileLogger;
 
-	/** HelperCtrl Ctrl */
-	private helperCtrl: HelperCtrl;
+	/** AmalgamaCtrl Ctrl */
+	private amalgamaCtrl: AmalgamaCtrl;
 
 	/** Default constructor */
 	constructor(router: Router, repository: MongoDBRepository) {
 		super();
-		this.logger = new FileLogger(HelperRoute.name);
-		this.helperCtrl = new HelperCtrl(repository);
+		this.logger = new FileLogger(AmalgamaAPIRoute.name);
+		this.amalgamaCtrl = new AmalgamaCtrl(repository);
 
 		/** Creates routes */
 		this.create(router);
@@ -30,13 +30,13 @@ export class HelperRoute extends BaseRoutes {
 	/**
 	 * Creates routes.
 	 *
-	 * @class HelperRoute
+	 * @class AmalgamaAPIRoute
 	 * @method create
 	 */
 	public create(router: Router) {
-		this.logger.debug('Creating HelperCtrl routes.');
+		this.logger.debug('Creating AmalgamaAPIRoute routes.');
 
-		router.route('/add').get(this.helperCtrl.addTempPost);
+		router.route('/post/add').post(this.amalgamaCtrl.addPost);
 
 	}
 
