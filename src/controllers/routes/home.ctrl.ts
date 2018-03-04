@@ -82,6 +82,9 @@ export class HomeCtrl extends BaseCtrl {
 	private async getWelcomeData(posts: IPost[]): Promise<WelcomeArea> {
 		const welcomeArea = new WelcomeArea();
 		await posts.forEach(post => {
+			if (post.meta == null) {
+				post.meta = new Meta(0, 0, new Date(), new FeaturedImage(new Thumb('/img/bg-img/slide-1.jpg')));
+			}
 			welcomeArea.slides.push({
 				thumb: {
 					image: post.meta.featuredImage.thumb.image,

@@ -6,8 +6,6 @@ import { MongoDBRepository } from '@yggdrasilts/data';
 import { MongoEntityManager } from 'typeorm';
 import { validate } from 'class-validator';
 
-import { BaseCtrl } from '../base.ctrl';
-
 import { Post, Author, Meta, FeaturedImage, Thumb } from '../../repository/entities';
 
 import * as moment from 'moment';

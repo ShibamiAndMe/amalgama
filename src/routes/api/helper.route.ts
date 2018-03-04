@@ -11,7 +11,7 @@ import { HelperCtrl } from '../../controllers/api/helper.ctrl';
  */
 export class HelperRoute extends BaseRoutes {
 
-	/** HelperCtrl logger */
+	/** HelperRoute logger */
 	public logger: FileLogger;
 
 	/** HelperCtrl Ctrl */
@@ -30,7 +30,7 @@ export class HelperRoute extends BaseRoutes {
 	/**
 	 * Creates routes.
 	 *
-	 * @class HelperCtrl
+	 * @class HelperRoute
 	 * @method create
 	 */
 	public create(router: Router) {

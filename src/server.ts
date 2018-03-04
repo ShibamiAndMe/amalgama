@@ -6,6 +6,7 @@ import { MongoDBRepository } from '@yggdrasilts/data';
 
 /** Application imports */
 import { AmalgamaRoute } from './routes/amalgama.route';
+import { AmalgamaAPIRoute } from './routes/api/amalgama.route';
 import { HelperRoute } from './routes/api/helper.route';
 
 import * as express from 'express';
@@ -35,6 +36,7 @@ export class YggdrasilServer extends Bootstrap {
 
 	public api(router: Router, repository: MongoDBRepository): IBootstrapRoute {
 		const helperRoute = new HelperRoute(router, repository);
+		const amalgamaApiRoute = new AmalgamaAPIRoute(router, repository);
 		return { prefix: '/api' };
 	}
 

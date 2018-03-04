@@ -7,14 +7,29 @@ html
 		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		//-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags
 
+		//-- CSS
 		//-- Title
 		title= data.layoutComponent.blogTitle
 		//-- Favicon
 		link(rel='icon' href='/img/core-img/favicon.ico')
+		//-- Tag-it
+		link(href='/js/third-party/tag-it/css/jquery.tagit.css' rel='stylesheet' type='text/css')
+		link(href='/js/third-party/tag-it/css/tagit.ui-zendesk.css' rel='stylesheet' type='text/css')
 		//-- Core Stylesheet
-		link(href='/css/style.css' rel='stylesheet')
+		link(href='/css/style.css' rel='stylesheet' type='text/css')
 		//-- Responsive CSS
-		link(href='/css/responsive/responsive.css' rel='stylesheet')
+		link(href='/css/responsive/responsive.css' rel='stylesheet' type='text/css')
+		//-- Main application Stylesheet
+		link(href='/css/main.css' rel='stylesheet' type='text/css')
+
+		//-- jQuery
+		script(src='/js/third-party/jquery/jquery-2.2.4.min.js')
+		//-- jQuery-ui
+		script(src='/js/third-party/jquery-ui/jquery-ui.min.js')
+		//-- Tag-it
+		script(src='/js/third-party/tag-it/js/tag-it.min.js')
+		//-- TinyMCE
+		script(src='/js/third-party/tinymce/tinymce.min.js')
 
 	body
 		//-- Preloader Start
@@ -26,15 +41,14 @@ html
 
 		include ../commons/footer/footer
 
-		//-- Jquery-2.2.4 js
-		script(src='/js/jquery/jquery-2.2.4.min.js')
+		//-- SCRIPTS
 		//-- Popper js
-		script(src='/js/bootstrap/popper.min.js')
+		script(src='/js/third-party/bootstrap/popper.min.js')
 		//-- Bootstrap-4 js
-		script(src='/js/bootstrap/bootstrap.min.js')
+		script(src='/js/third-party/bootstrap/bootstrap.min.js')
 		//-- All Plugins JS
-		script(src='/js/others/plugins.js')
+		script(src='/js/third-party/others/plugins.js')
 		//-- Active JS
-		script(src='/js/active.js')
+		script(src='/js/third-party/active.js')
 		//-- Main app JS
 		script(src='/js/main.js')
