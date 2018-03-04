@@ -8,15 +8,24 @@ block content
 				.input-group.input-group-lg.pb-3
 					.input-group-prepend
 						span.input-group-text.input-group-addon.info Título
-					input#postTitle.form-control(type='text')
+					if editor && editor.title
+						input#postTitle.form-control(type='text' value= editor.title)
+					else
+						input#postTitle.form-control(type='text')
 				#tinymceTextarea(placeholder='write something')
 				.input-group.input-group-sm.py-3
 					.input-group-prepend
 						span.input-group-text.input-group-addon.info Tags
 					ul#postTags.form-control
+						if editor && editor.tags
+							each tag in editor.tags
+								li= tag
 				.row.pt-3
 					button#tinymceSaveButton(type='button' class='btn btn-success') Save
 			.col-md-6
 				#tinymceHtml(class='single_blog_area')
+				if editor && editor.content
+					#{editor.content.html}
+				else
 					p Here it will appear your content...
 				#tinymceTags.tags-area

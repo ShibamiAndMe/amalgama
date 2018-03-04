@@ -25,7 +25,7 @@ export class PagesRoute {
 	constructor(repository: MongoDBRepository) {
 		this.logger = new FileLogger(PagesRoute.name);
 		this.postCtrl = new PostCtrl(repository);
-		this.editorCtrl = new EditorCtrl();
+		this.editorCtrl = new EditorCtrl(repository);
 	}
 
 	/**
@@ -39,7 +39,7 @@ export class PagesRoute {
 
 		router.route('/post/:id').get(this.postCtrl.showPost);
 
-		router.route('/editor').get(this.editorCtrl.showEditor);
+		router.route('/editor/:id?').get(this.editorCtrl.showEditor);
 
 	}
 
