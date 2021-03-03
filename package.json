@@ -18,7 +18,7 @@
 		"@yggdrasilts/mvc": "canary",
 		"lodash": "^4.17.5",
 		"moment": "^2.20.1",
-		"pug": "^2.0.3"
+		"pug": "^3.0.1"
 	},
 	"devDependencies": {
 		"@yggdrasilts/devs": "canary",
